@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -17,20 +18,29 @@ public class Player : MonoBehaviour
     private float attackCounter = .25f;
     private bool isAttack;
 
+    // player health
+    private int currentHealth = 100;
+    private int maxHealth = 100;
+    public Image healthBar;
+
+    // player heat
+    private int currentHeat = 0;
+    private int maxHeat = 100;
+    public Image heatBar;
+
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         playerAnimation = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        healthBar.fillAmount = currentHealth / maxHealth;
+        heatBar.fillAmount = currentHeat / maxHeat;
         rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime;
         Debug.Log(rb.velocity);
         playerAnimation.SetFloat("moveX", rb.velocity.x);

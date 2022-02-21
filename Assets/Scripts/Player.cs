@@ -39,8 +39,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // update UI
         healthBar.fillAmount = currentHealth / maxHealth;
         heatBar.fillAmount = currentHeat / maxHeat;
+
+        // update health
+
+        // update heat
+        currentHeat = Math.Max(currentHeat - 2, 0);
+        if(currentHeat > maxHeat) {
+            // disable weapon
+        }
+
         rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime;
         Debug.Log(rb.velocity);
         playerAnimation.SetFloat("moveX", rb.velocity.x);

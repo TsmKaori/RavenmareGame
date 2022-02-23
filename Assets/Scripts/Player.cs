@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
         // update UI
         healthBar.fillAmount = currentHealth / maxHealth;
         heatBar.fillAmount = currentHeat / maxHeat;
-        Debug.Log(currentHeat);
 
         // update health
 

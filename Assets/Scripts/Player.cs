@@ -6,38 +6,35 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    private BoxCollider2D boxCollider;
-    //private Vector3 move;
-
-    private Rigidbody2D rb;
-    private Animator playerAnimation;
-
+    [SerializeField]
+    private Rigidbody2D playerRigidbody;
+    [SerializeField]
+    private Animator playerAnimator;
     [SerializeField]
     private float speed;
+    [SerializeField]
+    public Image healthBar;
+    [SerializeField]
+    public Image heatBar;
+
 
     private float attackTime = .25f;
     private float attackCounter = .25f;
     private bool isAttack;
+    private Vector2 inputVector;
 
     // player health
     private int currentHealth = 100;
     private int maxHealth = 100;
-    public Image healthBar;
 
     // player heat
     private int currentHeat = 0;
     private int maxHeat = 100;
-    public Image heatBar;
 
-    // Start is called before the first frame update
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
-        playerAnimation = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         // update UI
@@ -48,27 +45,25 @@ public class Player : MonoBehaviour
 
         // update heat
         currentHeat = Math.Max(currentHeat - 2, 0);
-        if(currentHeat > maxHeat) {
+        if (currentHeat > maxHeat)
+        {
             // disable weapon
         }
 
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime;
-        Debug.Log(rb.velocity);
-        playerAnimation.SetFloat("moveX", rb.velocity.x);
-        playerAnimation.SetFloat("moveY", rb.velocity.y);
-
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1){
-            playerAnimation.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            playerAnimation.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
-        }
+        // handle input
+        inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        inputVector.Normalize();
+        playerAnimator.SetFloat("moveX", inputVector.x);
+        playerAnimator.SetFloat("moveY", inputVector.y);
+        playerAnimator.SetFloat("velocity", inputVector.magnitude);
 
         if (isAttack)
         {
-            rb.velocity = Vector2.zero;
+            playerRigidbody.velocity = Vector2.zero;
             attackCounter -= Time.deltaTime;
-            if(attackCounter <= 0)
+            if (attackCounter <= 0)
             {
-                playerAnimation.SetBool("isAttacking", false);
+                playerAnimator.SetBool("isAttacking", false);
                 isAttack = false;
             }
         }
@@ -76,14 +71,14 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             attackCounter = attackTime;
-            playerAnimation.SetBool("isAttacking", true);
+            playerAnimator.SetBool("isAttacking", true);
             isAttack = true;
         }
     }
 
-    
     void FixedUpdate()
     {
+        playerRigidbody.velocity = inputVector * speed * Time.fixedDeltaTime;
 
     }
 }

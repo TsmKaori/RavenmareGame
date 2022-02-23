@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private int maxHealth = 100;
 
     // player heat
-    private int currentHeat = 0;
+    private float currentHeat = 0;
     private int maxHeat = 100;
 
     void Start()
@@ -40,11 +40,12 @@ public class Player : MonoBehaviour
         // update UI
         healthBar.fillAmount = currentHealth / maxHealth;
         heatBar.fillAmount = currentHeat / maxHeat;
+        Debug.Log(currentHeat);
 
         // update health
 
         // update heat
-        currentHeat = Math.Max(currentHeat - 2, 0);
+        currentHeat = Math.Max(currentHeat - 10.0f * Time.deltaTime, 0);
         if (currentHeat > maxHeat)
         {
             // disable weapon
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
             attackCounter = attackTime;
             playerAnimator.SetBool("isAttacking", true);
             isAttack = true;
+            currentHeat += 10;
         }
     }
 

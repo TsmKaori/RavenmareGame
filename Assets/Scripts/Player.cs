@@ -81,5 +81,11 @@ public class Player : MonoBehaviour
     {
         playerRigidbody.velocity = inputVector * speed * Time.fixedDeltaTime;
 
+        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 ||  Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        {
+            playerAnimator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+            playerAnimator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+        }
+
     }
 }

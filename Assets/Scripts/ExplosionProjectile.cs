@@ -21,7 +21,9 @@ public class ExplosionProjectile : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject effect = Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(explosion, 5f);
+        Destroy(effect, 1f);
         Destroy(gameObject);
     }
+
+
 }

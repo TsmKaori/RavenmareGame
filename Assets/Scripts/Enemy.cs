@@ -81,4 +81,8 @@ public class Enemy : MonoBehaviour
             rigidbody.velocity = (player.transform.position - transform.position) * speed * Time.fixedDeltaTime;
         }
     }
+
+    public void takeDamage(float damage) {
+        currentHealth = Math.Max(0f, currentHealth - damage);
+    }
 }

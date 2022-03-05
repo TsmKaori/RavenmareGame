@@ -6,31 +6,69 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    // enemy public state
     [SerializeField]
-    private float speed;
-
+    private float speed = 20f;
+    [SerializeField]
     private float chaseRadius = 10f;
+    [SerializeField]
+    private float attackRadius = 1f;
+    [SerializeField]
+    private float attackDamage = 2f;
+    [SerializeField]
+    private float currentHealth = 100;
+    [SerializeField]
+    private bool showAttackRadius = false;
+
+    // enemy private state
     private bool isChasing = false;
-    private float attackTime = .25f;
-    private float attackCounter = .25f;
-    private bool isAttack;
-    private Vector2 inputVector;
-
-    public GameObject mask;
-    public GameObject player;
-
-    // enemy health
-    public float currentHealth = 100;
+    private bool isAttacking = false;
+    private float timeSinceAttack = 0f;
+    private float attackCooldown = 1f;
     private float maxHealth = 100;
+
+    // enemy gameobjects
+    [SerializeField]
+    private GameObject mask;
+    [SerializeField]
+    private Rigidbody2D rigidbody;
+    [SerializeField]
+    private GameObject attackRadiusVisual;
+
+    // player gameobjects
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private Player playerScript;
+    
 
     void Start()
     {
+        attackRadiusVisual.SetActive(showAttackRadius);
+        if(showAttackRadius) {
+            attackRadiusVisual.transform.localScale = new Vector3(attackRadius * 2.0f, attackRadius * 2.0f, 0f);
+        }
     }
 
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+
+        // attack if within attack radius
+        isAttacking = distanceToPlayer <= attackRadius;
+        if(isAttacking) {
+            if(timeSinceAttack >= attackCooldown) {
+                playerScript.takeDamage(attackDamage);
+                timeSinceAttack = 0f;
+            } else {
+                timeSinceAttack += Time.deltaTime;
+            }
+        }
+
+        // chase if within radius
         isChasing = distanceToPlayer <= chaseRadius;
+
+        // move mask to make the enemy health bar match currentHealth
         float width = currentHealth / maxHealth;
         mask.transform.localScale = new Vector3(width, 1.0f, 1.0f);
         float xOffset = -(1.0f - (currentHealth / maxHealth)) / 2;
@@ -39,6 +77,8 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        if(isChasing) {
+            rigidbody.velocity = (player.transform.position - transform.position) * speed * Time.fixedDeltaTime;
+        }
     }
 }

@@ -10108,19 +10108,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87be426a6580547e7836041ea3244e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 20
   mask: {fileID: 1952091607}
---- !u!210 &1740020437
-SortingGroup:
+  player: {fileID: 174301726}
+  playerScript: {fileID: 41735443}
+  rigidbody: {fileID: 1740020437}
+  currentHealth: 100
+--- !u!50 &1740020437
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740020432}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1824829984
 GameObject:
   m_ObjectHideFlags: 0
@@ -10277,7 +10291,7 @@ SpriteMask:
   m_BackSortingLayer: 0
   m_FrontSortingOrder: 0
   m_BackSortingOrder: 0
-  m_IsCustomRangeActive: 1
+  m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1989456548
 GameObject:

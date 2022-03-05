@@ -24,8 +24,8 @@ public class Player : MonoBehaviour
     private Vector2 inputVector;
 
     // player health
-    private int currentHealth = 100;
-    private int maxHealth = 100;
+    private float currentHealth = 100;
+    private float maxHealth = 100;
 
     // player heat
     private float currentHeat = 0;
@@ -86,6 +86,9 @@ public class Player : MonoBehaviour
             playerAnimator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
             playerAnimator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
+    }
 
+    public void takeDamage(float damage) {
+        currentHealth = Math.Max(0f, currentHealth - damage);
     }
 }

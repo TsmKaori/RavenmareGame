@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private float attackTime = .25f;
     private float attackCounter = .25f;
     private bool isAttack;
+    private bool isCooling = false;
     private Vector2 inputVector;
 
     // player health
@@ -48,6 +49,10 @@ public class Player : MonoBehaviour
         if (currentHeat > maxHeat)
         {
             // disable weapon
+            isCooling = true;
+        }
+        if(isCooling && currentHeat <= 0f) {
+            isCooling = false;
         }
 
         // handle input
@@ -68,7 +73,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !isCooling)
         {
             attackCounter = attackTime;
             playerAnimator.SetBool("isAttacking", true);

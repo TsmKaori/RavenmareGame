@@ -52,6 +52,9 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if(currentHealth <= 0f) {
+            Destroy(gameObject);
+        }
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
         // attack if within attack radius

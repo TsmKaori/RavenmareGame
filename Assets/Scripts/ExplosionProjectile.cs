@@ -25,6 +25,4 @@ public class ExplosionProjectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-
-
 }

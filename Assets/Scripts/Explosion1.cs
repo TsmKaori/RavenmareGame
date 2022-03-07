@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Explosion1 : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,12 @@ public class Explosion1 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)  //AOE hit 
     {
-        Debug.Log("hit");
-        Destroy(collision.gameObject); //Detroy object for now. Implement health deduction here.
+        GameObject gameObject = collision.gameObject;
+        if (gameObject.tag == "Enemy")
+        {
+            Enemy enemyScript = gameObject.GetComponent<Enemy>();
+            enemyScript.takeDamage(80f);
+        }
     }
 
     /*

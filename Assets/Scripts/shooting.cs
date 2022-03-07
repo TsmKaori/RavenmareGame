@@ -16,6 +16,9 @@ public class shooting : MonoBehaviour
 
     public float bulletForce = 20f;
 
+    public bool IsAvailable = true;
+    public float CooldownDuration = 10.0f;
+
     void Start()
     {
         
@@ -32,9 +35,20 @@ public class shooting : MonoBehaviour
 
     void shoot()
     {
+        if (IsAvailable == false)
+        {
+            return;
+        }
+        explosionAbility();
+
+        StartCoroutine(StartCooldown());
+    }
+
+    void explosionAbility()
+    {
         GameObject explosionProjectile;
 
-        if(playerAnimator.GetFloat("lastMoveX") < -0.1) //left facing
+        if (playerAnimator.GetFloat("lastMoveX") < -0.1) //left facing
         {
             explosionProjectile = Instantiate(explosionProjPrefab, leftFirePoint.position, leftFirePoint.rotation);
             Rigidbody2D rb = explosionProjectile.GetComponent<Rigidbody2D>();
@@ -58,6 +72,12 @@ public class shooting : MonoBehaviour
             Rigidbody2D rb = explosionProjectile.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector3.down * bulletForce, ForceMode2D.Impulse);
         }
+    }
 
+    public IEnumerator StartCooldown()
+    {
+        IsAvailable = false;
+        yield return new WaitForSeconds(CooldownDuration);
+        IsAvailable = true;
     }
 }

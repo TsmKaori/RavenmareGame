@@ -18,10 +18,12 @@ public class MeeleHitEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        GameObject gameObject = col.gameObject;
-        if(gameObject.tag == "Enemy") {
-            Enemy enemyScript = gameObject.GetComponent<Enemy>();
-            enemyScript.takeDamage(40f);
+        if(col != null) {
+            GameObject gameObject = col.gameObject;
+            if(gameObject.tag == "Enemy") {
+                Enemy enemyScript = gameObject.GetComponent<Enemy>();
+                enemyScript.takeDamage(40f);
+            }
         }
     }
 }

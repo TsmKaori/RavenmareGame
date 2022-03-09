@@ -93,6 +93,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject gameObject = collision.gameObject;
+        if (gameObject.tag == "Enemy")                  //If get hits by basic enemy
+        {
+            takeDamage(40f);
+        }
+    }
+
     public void takeDamage(float damage) {
         currentHealth = Math.Max(0f, currentHealth - damage);
     }

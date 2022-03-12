@@ -191,6 +191,7 @@ MonoBehaviour:
   upFirePoint: {fileID: 1721806651}
   downFirePoint: {fileID: 744764416}
   explosionProjPrefab: {fileID: 1434572631092583606, guid: d57e61ab950eb3c4d946ecc734ab846a, type: 3}
+  freezePrefab: {fileID: 3636008397888851690, guid: 5b84640c1c8d1dc459b19670546c9940, type: 3}
   playerAnimator: {fileID: 174301733}
   bulletForce: 20
   IsAvailable: 1
@@ -392,7 +393,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0f39a9205e4394ee1b6ba8269428d176, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -442,7 +443,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10378,7 +10379,6 @@ GameObject:
   - component: {fileID: 1587758847}
   - component: {fileID: 1587758848}
   - component: {fileID: 1587758849}
-  - component: {fileID: 1587758850}
   m_Layer: 0
   m_Name: UpHitbox
   m_TagString: Untagged
@@ -10718,7 +10718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721806650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 0.54, z: 0}
+  m_LocalPosition: {x: -0.18, y: 1.327, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

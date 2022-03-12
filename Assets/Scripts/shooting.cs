@@ -11,6 +11,7 @@ public class shooting : MonoBehaviour
     public Transform downFirePoint; 
 
     public GameObject explosionProjPrefab;
+    public GameObject freezePrefab;
     [SerializeField]
     private Animator playerAnimator;
 
@@ -30,6 +31,9 @@ public class shooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             shoot();
+        }else if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameObject freezeEffect = Instantiate(freezePrefab, upFirePoint.position, upFirePoint.rotation);
         }
     }
 

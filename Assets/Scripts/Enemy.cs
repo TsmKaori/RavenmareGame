@@ -88,4 +88,16 @@ public class Enemy : MonoBehaviour
     public void takeDamage(float damage) {
         currentHealth = Math.Max(0f, currentHealth - damage);
     }
+
+    public void freezeAbility()
+    {
+        rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        StartCoroutine(freeze(6));
+    }
+
+    IEnumerator freeze(int secs)
+    {
+        yield return new WaitForSeconds(secs);
+        rigidbody.constraints = RigidbodyConstraints2D.None;
+    }
 }

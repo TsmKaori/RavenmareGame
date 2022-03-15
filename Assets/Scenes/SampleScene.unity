@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 41735442}
   - component: {fileID: 41735443}
   - component: {fileID: 41735444}
+  - component: {fileID: 41735446}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -191,11 +192,27 @@ MonoBehaviour:
   upFirePoint: {fileID: 1721806651}
   downFirePoint: {fileID: 744764416}
   explosionProjPrefab: {fileID: 1434572631092583606, guid: d57e61ab950eb3c4d946ecc734ab846a, type: 3}
-  freezePrefab: {fileID: 3636008397888851690, guid: 5b84640c1c8d1dc459b19670546c9940, type: 3}
   playerAnimator: {fileID: 174301733}
   bulletForce: 20
   IsAvailable: 1
   CooldownDuration: 10
+--- !u!114 &41735446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41735441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fb1551ecb34c84499eaa78aaa398b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezePrefab: {fileID: 3636008397888851690, guid: 5b84640c1c8d1dc459b19670546c9940, type: 3}
+  ringOfFirePrefab: {fileID: 3529865892107448820, guid: 2e96f443507587845b6313e7587006d0, type: 3}
+  burningPrefab: {fileID: 8807069359981892902, guid: 587bf1396ec8a6542b13d46fa3cdce45, type: 3}
+  player: {fileID: 174301726}
+  IsAvailable: 1
 --- !u!1 &173807037
 GameObject:
   m_ObjectHideFlags: 0

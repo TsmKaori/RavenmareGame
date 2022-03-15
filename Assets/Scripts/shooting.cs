@@ -11,7 +11,7 @@ public class shooting : MonoBehaviour
     public Transform downFirePoint; 
 
     public GameObject explosionProjPrefab;
-    public GameObject freezePrefab;
+    //public GameObject freezePrefab;
     [SerializeField]
     private Animator playerAnimator;
 
@@ -28,24 +28,12 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            shoot();
-        }else if (Input.GetKeyDown(KeyCode.R))
-        {
-            GameObject freezeEffect = Instantiate(freezePrefab, upFirePoint.position, upFirePoint.rotation);
-        }
+
     }
 
-    void shoot()
+    public void shoot()
     {
-        if (IsAvailable == false)
-        {
-            return;
-        }
         explosionAbility();
-
-        StartCoroutine(StartCooldown());
     }
 
     void explosionAbility()
@@ -76,12 +64,5 @@ public class shooting : MonoBehaviour
             Rigidbody2D rb = explosionProjectile.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector3.down * bulletForce, ForceMode2D.Impulse);
         }
-    }
-
-    public IEnumerator StartCooldown()
-    {
-        IsAvailable = false;
-        yield return new WaitForSeconds(CooldownDuration);
-        IsAvailable = true;
     }
 }

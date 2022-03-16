@@ -8,6 +8,8 @@ public class AbilitySystem : MonoBehaviour
     public GameObject ringOfFirePrefab;
     public GameObject burningPrefab;
     private shooting shootingScript;
+    private GrappleAbility grapplingScript;
+
     [SerializeField]
     private GameObject player;
 
@@ -16,6 +18,7 @@ public class AbilitySystem : MonoBehaviour
     void Start()
     {
         shootingScript = gameObject.GetComponent<shooting>();
+        grapplingScript = gameObject.GetComponent<GrappleAbility>();
     }
 
     // Update is called once per frame
@@ -51,6 +54,11 @@ public class AbilitySystem : MonoBehaviour
         {
             GameObject ringOfFireEffect = Instantiate(burningPrefab, player.transform.position, player.transform.rotation);
             StartCoroutine(StartCooldown(6));
+        }
+        else if (Input.GetKeyDown(KeyCode.U))
+        {
+            grapplingScript.BeginGrapple();
+            StartCoroutine(StartCooldown(2));
         }
     }
 

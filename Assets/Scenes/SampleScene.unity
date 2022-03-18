@@ -193,10 +193,12 @@ MonoBehaviour:
   upFirePoint: {fileID: 1721806651}
   downFirePoint: {fileID: 744764416}
   explosionProjPrefab: {fileID: 1434572631092583606, guid: d57e61ab950eb3c4d946ecc734ab846a, type: 3}
+  rapidFireProjPrefab: {fileID: 387145862629463250, guid: 2ae281dd66584404980c4d1f82d2cc70, type: 3}
   playerAnimator: {fileID: 174301733}
   bulletForce: 20
   IsAvailable: 1
   CooldownDuration: 10
+  facing: down
 --- !u!114 &41735446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +580,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.2
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -963,7 +965,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5a33c47a9bf4b640be50d18193559a1, type: 2}
+  - {fileID: 2100000, guid: f3e8acdde78af90458fd637780d24602, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

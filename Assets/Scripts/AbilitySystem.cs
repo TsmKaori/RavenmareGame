@@ -38,27 +38,32 @@ public class AbilitySystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             shootingScript.shoot();
-            StartCoroutine(StartCooldown(6));
+            //StartCoroutine(StartCooldown(6));
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
             GameObject freezeEffect = Instantiate(freezePrefab, player.transform.position, player.transform.rotation);
-            StartCoroutine(StartCooldown(6));
+            //StartCoroutine(StartCooldown(6));
         }
         else if (Input.GetKeyDown(KeyCode.T))
         {
             GameObject ringOfFireEffect = Instantiate(ringOfFirePrefab, player.transform.position, player.transform.rotation);
-            StartCoroutine(StartCooldown(6));
+            //StartCoroutine(StartCooldown(6));
         }
         else if (Input.GetKeyDown(KeyCode.Y))
         {
             GameObject ringOfFireEffect = Instantiate(burningPrefab, player.transform.position, player.transform.rotation);
-            StartCoroutine(StartCooldown(6));
+            //StartCoroutine(StartCooldown(6));
         }
         else if (Input.GetKeyDown(KeyCode.U))
         {
             grapplingScript.BeginGrapple();
-            StartCoroutine(StartCooldown(2));
+            //StartCoroutine(StartCooldown(2));
+        }
+        else if (Input.GetKeyDown(KeyCode.I))
+        {
+            shootingScript.rapidFire();
+            //StartCoroutine(StartCooldown(4));
         }
     }
 

@@ -733,6 +733,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: dungeonTileset_30
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373d4747c02789e4596d09cfb3cffe25
+      internalID: -1343605703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonTileset_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 148
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2876a8e6199c7434c9f01cc7e3d8f39b
+      internalID: -981149239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonTileset_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 212
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4c649335b909a4db78662aed981754
+      internalID: -2003437769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonTileset_33
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9810dfcc4a8366d408308b83ffb4fbb0
+      internalID: -975110522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonTileset_34
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 154
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4f57f10f9f85d45a8c5a985f863fb4
+      internalID: -1303965460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonTileset_35
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 351
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28c9ca64c0db7643bc23f4e7b6cb241
+      internalID: -1972341966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -747,21 +873,27 @@ TextureImporter:
       dungeonTileset_11: 81860260
       dungeonTileset_27: -1696929582
       dungeonTileset_7: -1792902066
+      dungeonTileset_35: -1303965460
       dungeonTileset_28: -10592765
+      dungeonTileset_31: -1931669458
       dungeonTileset_15: 1798199925
       dungeonTileset_29: -26285250
       dungeonTileset_25: 1163992605
       dungeonTileset_18: -1228923004
+      dungeonTileset_33: -2003437769
       dungeonTileset_2: 1913304355
       dungeonTileset_6: -634372276
       dungeonTileset_0: -33013196
       dungeonTileset_9: -258617835
       dungeonTileset_17: -1568529504
+      dungeonTileset_32: -981149239
+      dungeonTileset_30: -1343605703
       dungeonTileset_8: -825899306
       dungeonTileset_21: -848396277
       dungeonTileset_10: -127219762
       dungeonTileset_24: -647531707
       dungeonTileset_22: -494595992
+      dungeonTileset_34: -975110522
       dungeonTileset_23: -778960827
       dungeonTileset_14: -375862798
       dungeonTileset_13: -346705670

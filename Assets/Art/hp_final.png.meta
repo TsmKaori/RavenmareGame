@@ -1,0 +1,1046 @@
+fileFormatVersion: 2
+guid: bf10c888a13e34c96868f90c2fa0d3bb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hp_final_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1102
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0beae528f31f43f0a316f40fd217c96
+      internalID: 248258997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_1
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1102
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c876b7362bdf14e6b9afc6cf9362198c
+      internalID: -222852784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_2
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1102
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3302d5e4bbfe40ca8a40d05684659b4
+      internalID: -1543196575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_3
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1102
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949efd10e7b184e56aba572876e4ff4f
+      internalID: 1110997298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_4
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1102
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf7b160bc3d240ab86ecdb144ae46af
+      internalID: -615271153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_5
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1102
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23522e8861c0241c4878840aaa79fc6f
+      internalID: 1158138594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1005
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed44eb56056a146c88cb1633990a833e
+      internalID: -271622137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_7
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1005
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cc3406c04df46e08a8516b988f066f
+      internalID: 832356932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_8
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1005
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df11b5e6c1240497098ee14dc38dd875
+      internalID: -1610494239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_9
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 1005
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ee3c23be24f4334af5fe9ec63e29ba
+      internalID: -253441100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_10
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1005
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f55d1a406bc4618ba951697212834e
+      internalID: 873816356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_11
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1005
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8280db2dfbed344dbb60aba8f5e623fd
+      internalID: 1396420847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 908
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b1aaf22f2364868bf302539d1eab33
+      internalID: -413623656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_13
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 908
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7600d5b280842368c4c56ca96e6d68
+      internalID: 1815507081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_14
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 908
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6914bf6d7ac8a4d33baf78a377e6a3fb
+      internalID: 771623081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_15
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 908
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c047d8ce8539849b0a9daf917458c5ec
+      internalID: -2022575613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_16
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 908
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30045e7c45a4483abe5f9729bd8889c
+      internalID: -2055018228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_17
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 908
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf4d4b856084490a82b86eb1b5d32d6
+      internalID: 9661456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 811
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a738d831d0cb42f89aee7225d5ca94c
+      internalID: -664130644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_19
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 811
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d586354906b34b0caf90b49f7c609db
+      internalID: 1601352591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_20
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 811
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c393b5432a9184cb2b3c1812d91cf2a7
+      internalID: -480936055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_21
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 811
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8ac5acdf0754b949a3aac64b399db7
+      internalID: 110036894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_22
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 811
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a64948193494e2bb57ec0793c1d634
+      internalID: -675662316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_23
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 811
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbe0dce0f7e64e4eb7af4141d36c567
+      internalID: -2106996174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 714
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf92cb6927aee4fd6a000f58297e8985
+      internalID: 1307697298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_25
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 714
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b15be7cd4d8439eb610f1b12a9b3fb
+      internalID: 1073158879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_26
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 714
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d95087c1a974f158b569652c96579f
+      internalID: 125604206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_27
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 714
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3bfd5d692c4e44b3a405cf613f614b3
+      internalID: 1396666961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_28
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 714
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7916c386989bd41f2b3f9e7be9d5a02e
+      internalID: -960097930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_29
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 714
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39bbea9c212814b17b5407f9a954712a
+      internalID: 1527673604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 617
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb273a5d9b4448acaef3b4477207a59
+      internalID: 1728895040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_31
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 617
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d90def619044972aee7e336f164c84
+      internalID: -677724715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_32
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 617
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22eab8f20f08f4a709141604f3002219
+      internalID: 85831701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_33
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 617
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8d9753029fd4b7882baf4a9bd62f16
+      internalID: -247585818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_34
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 617
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f6abfd90fc34249935e8feb10e5012
+      internalID: -529126633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_35
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 617
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ff31b8f8b33437d9d21c309a592d32
+      internalID: -1476831522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 520
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c683fa4d50c24467fad2908c7a0669fd
+      internalID: -1379991003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_37
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 520
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e40930db58c46e98fec1b9fc13ecc9
+      internalID: -1057693081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_38
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 520
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb468247735f46838c44bf3dac9fef5
+      internalID: -619194097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_39
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 520
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee2c9ba778c042549931b654e20ca91
+      internalID: 375115429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_40
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 520
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3b914de25fa4a42b37d87d8d52a426
+      internalID: 1280792809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hp_final_41
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 520
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be63f6f40b8a4210ad31f68d2710df9
+      internalID: 1162876484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      hp_final_38: -619194097
+      hp_final_6: -271622137
+      hp_final_34: -529126633
+      hp_final_22: -675662316
+      hp_final_19: 1601352591
+      hp_final_33: -247585818
+      hp_final_14: 771623081
+      hp_final_28: -960097930
+      hp_final_11: 1396420847
+      hp_final_30: 1728895040
+      hp_final_12: -413623656
+      hp_final_3: 1110997298
+      hp_final_20: -480936055
+      hp_final_9: -253441100
+      hp_final_24: 1307697298
+      hp_final_25: 1073158879
+      hp_final_26: 125604206
+      hp_final_41: 1162876484
+      hp_final_10: 873816356
+      hp_final_29: 1527673604
+      hp_final_35: -1476831522
+      hp_final_39: 375115429
+      hp_final_21: 110036894
+      hp_final_7: 832356932
+      hp_final_40: 1280792809
+      hp_final_1: -222852784
+      hp_final_17: 9661456
+      hp_final_4: -615271153
+      hp_final_15: -2022575613
+      hp_final_5: 1158138594
+      hp_final_31: -677724715
+      hp_final_23: -2106996174
+      hp_final_2: -1543196575
+      hp_final_0: 248258997
+      hp_final_18: -664130644
+      hp_final_32: 85831701
+      hp_final_36: -1379991003
+      hp_final_27: 1396666961
+      hp_final_13: 1815507081
+      hp_final_8: -1610494239
+      hp_final_16: -2055018228
+      hp_final_37: -1057693081
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

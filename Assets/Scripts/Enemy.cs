@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float attackRadius = 1f;
     [SerializeField]
-    private float attackDamage = 2f;
+    private int attackDamage = 2;
     [SerializeField]
     private float currentHealth = 100;
     [SerializeField]

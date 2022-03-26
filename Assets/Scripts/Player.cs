@@ -13,9 +13,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
-    public Image healthBar;
+    private Image statusBar;
     [SerializeField]
-    public Image heatBar;
+    private GameObject healthBar;
+    private Image[] healthBars;
+    [SerializeField]
+    private Sprite[] statusBars;
 
 
     private float attackTime = .25f;
@@ -25,8 +28,8 @@ public class Player : MonoBehaviour
     private Vector2 inputVector;
 
     // player health
-    private float currentHealth = 100;
-    private float maxHealth = 100;
+    private int currentHealth = 100;
+    private int maxHealth = 100;
 
     // player heat
     private float currentHeat = 0;
@@ -34,19 +37,30 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        int numHealthBars = healthBar.transform.childCount;
+        healthBars = new Image[numHealthBars];
+        for(int i = 0; i < numHealthBars; i++) {
+            healthBars[i] = healthBar.gameObject.transform.GetChild(i).GetComponent<Image>();
+        }
     }
 
     void Update()
     {
         // update UI
-        healthBar.fillAmount = currentHealth / maxHealth;
-        heatBar.fillAmount = currentHeat / maxHeat;
-
-        // update health
+        int numHealthBars = healthBars.Length;
+        float currentHealthPercentage = (float) currentHealth / (float) maxHealth;
+        for(int i = 0; i < numHealthBars; i++) {
+            float fillAmount = (currentHealthPercentage - (i * (1.0f / numHealthBars))) / (1.0f / numHealthBars);
+            healthBars[i].fillAmount = fillAmount;
+        }
+        int numHeatBulbs = statusBars.Length - 1;
+        float currentHeatPercentage = currentHeat / (float) maxHeat;
+        int heatBulbsLit = (int) Math.Round(currentHeatPercentage * numHeatBulbs, MidpointRounding.AwayFromZero);
+        statusBar.sprite = statusBars[heatBulbsLit];
 
         // update heat
-        currentHeat = Math.Max(currentHeat - 10.0f * Time.deltaTime, 0);
-        if (currentHeat > maxHeat)
+        currentHeat = Math.Max(currentHeat - 5.0f * Time.deltaTime, 0f);
+        if (currentHeat >= maxHeat)
         {
             // disable weapon
             isCooling = true;
@@ -78,7 +92,7 @@ public class Player : MonoBehaviour
             attackCounter = attackTime;
             playerAnimator.SetBool("isAttacking", true);
             isAttack = true;
-            currentHeat += 10;
+            currentHeat = Math.Min(100.0f, currentHeat + 10f);
         }
     }
 
@@ -98,11 +112,11 @@ public class Player : MonoBehaviour
         GameObject gameObject = collision.gameObject;
         if (gameObject.tag == "Enemy")                  //If get hits by basic enemy
         {
-            takeDamage(40f);
+            takeDamage(40);
         }
     }
 
-    public void takeDamage(float damage) {
-        currentHealth = Math.Max(0f, currentHealth - damage);
+    public void takeDamage(int damage) {
+        currentHealth = Math.Max(0, currentHealth - damage);
     }
 }

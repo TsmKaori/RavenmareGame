@@ -59,6 +59,7 @@ public class GrappleAbility : MonoBehaviour
 
         }
     }
+
     public void BeginGrapple()
     {
         Vector2 direction;

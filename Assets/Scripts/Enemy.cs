@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if(currentHealth <= 0f) {
-            Destroy(gameObject);
+           die();
         }
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
@@ -93,6 +93,13 @@ public class Enemy : MonoBehaviour
     {
         rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         StartCoroutine(freeze(6));
+    }
+
+    void die() {
+        System.Random rnd = new System.Random();
+        int gold = rnd.Next(5, 10);
+        playerScript.addGold(gold);
+        Destroy(gameObject);
     }
 
     IEnumerator freeze(int secs)

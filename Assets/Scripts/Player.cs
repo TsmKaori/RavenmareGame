@@ -19,7 +19,10 @@ public class Player : MonoBehaviour
     private Image[] healthBars;
     [SerializeField]
     private Sprite[] statusBars;
+    [SerializeField]
+    private Text goldText;
 
+    private int gold = 0;
 
     private float attackTime = .25f;
     private float attackCounter = .25f;
@@ -57,6 +60,7 @@ public class Player : MonoBehaviour
         float currentHeatPercentage = currentHeat / (float) maxHeat;
         int heatBulbsLit = (int) Math.Round(currentHeatPercentage * numHeatBulbs, MidpointRounding.AwayFromZero);
         statusBar.sprite = statusBars[heatBulbsLit];
+        goldText.text = "Gold: " + gold;
 
         // update heat
         currentHeat = Math.Max(currentHeat - 5.0f * Time.deltaTime, 0f);
@@ -119,4 +123,17 @@ public class Player : MonoBehaviour
     public void takeDamage(int damage) {
         currentHealth = Math.Max(0, currentHealth - damage);
     }
+
+    public void addGold(int amount) {
+        gold += amount;
+    }
+
+    public bool takeGold(int amount) {
+        if(gold >= amount) {
+            gold -= amount;
+            return true;
+        } else {
+            return false;
+        }
+    } 
 }

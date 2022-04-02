@@ -6,18 +6,27 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+
     public TMP_Text nameText;
     public TMP_Text dialogueText;
 
     public Image LokiPicture;
+    public Image TojiPicture;
 
+    public GameObject dialogueObject;
 
+    
+    int i;
+    int dialogueCount;
+    List<Dialogue> dialogList;
+    Image currentpic;
 
     private Queue<string> sentences;
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        dialogList = new List<Dialogue>();
     }
 
     // Update is called once per frame
@@ -26,44 +35,112 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (List<Dialogue> dialogue)
     {
-        //nameText = GetComponent<TMP_Text>();
+        dialogueObject.SetActive(true);
 
-        nameText.text = dialogue.name;
+        dialogueCount = dialogue.Count;
+        i = 0;
+        currentpic = null;
+        dialogList = dialogue;
+
+        nameText.text = dialogue[i].name;
         sentences.Clear();
 
 
-        Debug.Log("wee");
-        if((dialogue.name).Equals("Loki"))    //Check which character is speaking and activate
+        if ((dialogue[i].name).Equals("Loki"))    //Check which character is speaking and activate
         {
+            if (currentpic != null)
+            {
+                currentpic.gameObject.SetActive(false);
+            }
             LokiPicture.gameObject.SetActive(true);
-        }else if((dialogue.name).Equals(""))
+            currentpic = LokiPicture;
+        }
+        else if ((dialogue[i].name).Equals("Toji"))
         {
-
+            if (currentpic != null)
+            {
+                currentpic.gameObject.SetActive(false);
+            }
+            TojiPicture.gameObject.SetActive(true);
+            currentpic = TojiPicture;
         }
         else
         {
-            //LokiPicture.enabled = true;
-
+            if (currentpic != null)
+            {
+                currentpic.gameObject.SetActive(false);
+            }
         }
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue[i].sentences)
         {
             sentences.Enqueue(sentence);
         }
 
         DisplayNextSentence();
-
     }
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        if (i < dialogueCount && sentences.Count == 0) //To next thing on the dialogue list or next person
         {
             EndDialogue();
+            i++;
+            if(i >= dialogueCount)
+            {
+                if (currentpic != null)
+                {
+                    currentpic.gameObject.SetActive(false);
+                }
+                dialogueObject.SetActive(false);
+                return;
+            }
+            foreach (string sentenc in dialogList[i].sentences)
+            {
+                sentences.Enqueue(sentenc);
+            }
+
+            nameText.text = dialogList[i].name;
+
+            if ((dialogList[i].name).Equals("Loki"))    //Check which character is speaking and activate
+            {
+                if (currentpic != null)
+                {
+                    currentpic.gameObject.SetActive(false);
+                }
+                LokiPicture.gameObject.SetActive(true);
+                currentpic = LokiPicture;
+            }
+            else if ((dialogList[i].name).Equals("Toji"))
+            {
+                if (currentpic != null)
+                {
+                    currentpic.gameObject.SetActive(false);
+                }
+                TojiPicture.gameObject.SetActive(true);
+                currentpic = TojiPicture;
+            }
+            else
+            {
+                if (currentpic != null)
+                {
+                    currentpic.gameObject.SetActive(false);
+                }
+            }
+        }
+        else if (i >= dialogueCount) //End of the whole dialogue
+        {
+            if (currentpic != null)
+            {
+                currentpic.gameObject.SetActive(false);
+            }
             return;
         }
+
+        Debug.Log(sentences.Count);
+
 
         string sentence = sentences.Dequeue();
         //dialogueText = GetComponent<TMP_Text>();
@@ -72,7 +149,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        LokiPicture.enabled = false;
+        //LokiPicture.enabled = false;
         //Set Dialogue box inactive here
     }
 }

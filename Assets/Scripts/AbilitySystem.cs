@@ -42,7 +42,7 @@ public class AbilitySystem : MonoBehaviour
     public float rapidFireCooldown = 20;
     public float electricityCooldown = 60;
 
-    
+
     public Image explodingProjectilePic;
     public Image freezePic;
     public Image burningPic;
@@ -73,15 +73,20 @@ public class AbilitySystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ability1 = "explodingProjectile";
-
         explodingProjectileIsCooldown = false;
         freezeIsCooldown = false;
         burningIsCoolDown = false;
         ringOfFireIsCooldown = false;
         grapplingIsCooldown = false;
         rapidFireIsCooldown = false;
+        
+        unlockAbilties(SkillType.explodingProjectile);
+        unlockAbilties(SkillType.freeze);
+
+        Debug.Log(gameObject.transform.childCount);
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -166,6 +171,36 @@ public class AbilitySystem : MonoBehaviour
         
     }
 
+    public void unlockAbilties(SkillType skillName)
+    {
+        unlockedSkills.Add(skillName);
+
+        
+        if(skillName == SkillType.explodingProjectile)
+        {
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else if (skillName == SkillType.freeze)
+        {
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        }
+        else if (skillName == SkillType.grappling)
+        {
+            gameObject.transform.GetChild(4).gameObject.SetActive(true);
+        }
+        else if (skillName == SkillType.ringOfFire)
+        {
+            gameObject.transform.GetChild(3).gameObject.SetActive(true);
+        }
+        else if (skillName == SkillType.rapidFire)
+        {
+            gameObject.transform.GetChild(5).gameObject.SetActive(true);
+        }else if(skillName == SkillType.inferno)
+        {
+            gameObject.transform.GetChild(2).gameObject.SetActive(true);
+        }
+    }
+
     void UseAbility()
     {
         if (IsAvailable == false)
@@ -190,36 +225,6 @@ public class AbilitySystem : MonoBehaviour
 
     public void useAbility1()
     {
-        if (ability1 == "explodingProjectile")
-        {
-            shootingScript.shoot();
-            //StartCoroutine(StartCooldown(6));
-        }
-        else if (ability1 == "freeze")
-        {
-            GameObject freezeEffect = Instantiate(freezePrefab, player.transform.position, player.transform.rotation);
-            //StartCoroutine(StartCooldown(6));
-        }
-        else if (ability1 == "burning")
-        {
-            GameObject burningEffect = Instantiate(burningPrefab, player.transform.position, player.transform.rotation);
-            //StartCoroutine(StartCooldown(6));
-        }
-        else if (ability1 == "ringOfFire")
-        {
-            GameObject ringOfFireEffect = Instantiate(ringOfFirePrefab, player.transform.position, player.transform.rotation);
-            //StartCoroutine(StartCooldown(6));
-        }
-        else if (ability1 == "grappling")
-        {
-            grapplingScript.BeginGrapple();
-            //StartCoroutine(StartCooldown(2));
-        }
-        else if (ability1 == "rapidFire")
-        {
-            shootingScript.rapidFire();
-            //StartCoroutine(StartCooldown(4));
-        }
     }
 
     public void useAbility2()
@@ -235,7 +240,7 @@ public class AbilitySystem : MonoBehaviour
     public void explodingProjectile()
     {
         
-        if(explodingProjectileIsCooldown == false)
+        if(explodingProjectileIsCooldown == false && unlockedSkills.Contains(SkillType.explodingProjectile))
         {
             explodingProjectileIsCooldown = true;
             explodingProjectileCenterPic.enabled = false;
@@ -248,7 +253,7 @@ public class AbilitySystem : MonoBehaviour
     public void freeze()
     {
         
-        if (freezeIsCooldown == false)
+        if (freezeIsCooldown == false && unlockedSkills.Contains(SkillType.freeze))
         {
             freezeIsCooldown = true;
             freezeCenterPic.enabled = false;
@@ -262,7 +267,7 @@ public class AbilitySystem : MonoBehaviour
     public void ringOfFire()
     {
         
-        if (ringOfFireIsCooldown == false)
+        if (ringOfFireIsCooldown == false && unlockedSkills.Contains(SkillType.ringOfFire))
         {
             ringOfFireIsCooldown = true;
             ringOfFireCenterPic.enabled = false;
@@ -276,7 +281,7 @@ public class AbilitySystem : MonoBehaviour
     public void inferno()
     {
         
-        if (burningIsCoolDown == false)
+        if (burningIsCoolDown == false && unlockedSkills.Contains(SkillType.inferno))
         {
             burningIsCoolDown = true;
             burningCenterPic.enabled = false;
@@ -290,7 +295,7 @@ public class AbilitySystem : MonoBehaviour
     public void grappling()
     {
         
-        if (grapplingIsCooldown == false)
+        if (grapplingIsCooldown == false && unlockedSkills.Contains(SkillType.grappling))
         {
             grapplingIsCooldown= true;
             grapplingCenterPic.enabled = false;
@@ -304,7 +309,7 @@ public class AbilitySystem : MonoBehaviour
     public void rapidFire()
     {
         
-        if (rapidFireIsCooldown == false)
+        if (rapidFireIsCooldown == false && unlockedSkills.Contains(SkillType.rapidFire))
         {
             rapidFireIsCooldown = true;
             rapidFireCenterPic.enabled = false;

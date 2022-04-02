@@ -7,10 +7,11 @@ public class GrappleAbility : MonoBehaviour
 {
     [SerializeField] LineRenderer hook;
     [SerializeField] Transform playerTransform;
+    //[SerializeField] 
 
 
     [SerializeField] LayerMask gappleMask;
-    [SerializeField] float MaxDist = 10f;
+    [SerializeField] float MaxDist = 5f;
     [SerializeField] float speed = 10f;
     [SerializeField] float shootSpeed = 20f;
 
@@ -19,6 +20,11 @@ public class GrappleAbility : MonoBehaviour
 
     bool currentlyGappling = false;
     [HideInInspector] public bool retracting = false;
+
+    [HideInInspector] public bool travel = false;
+
+    //Vector2 direction;
+
 
     Vector2 target;
 
@@ -53,42 +59,49 @@ public class GrappleAbility : MonoBehaviour
 
         }
     }
+
     public void BeginGrapple()
     {
         Vector2 direction;
         if (playerAnimator.GetFloat("lastMoveX") < -0.1) //left facing
         {
-            direction = new Vector2(10, 0);
+            direction = Vector2.left;
         }
         else if (playerAnimator.GetFloat("lastMoveX") > 0.1) //right facing
         {
-            direction = new Vector2(-10, 0);
+            direction = Vector2.right;
         }
         else if (playerAnimator.GetFloat("lastMoveY") > 0.1)  //Up facing
         {
-            direction = new Vector2(0, -10);
+            direction = Vector2.up;
         }
         else //down facing
         {
-            direction = new Vector2(0, 10);
+            direction = Vector2.down;
         }
         //direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
 
+       bool hit = Physics2D.Raycast(playerTransform.position, direction, 5f, gappleMask);
 
-        RaycastHit2D hit = Physics2D.Raycast(playerTransform.position,direction,MaxDist,gappleMask);
         Debug.Log(direction);
+       RaycastHit2D tii = Physics2D.Raycast(playerTransform.position, direction, 5f, ~gappleMask);
 
-        if (hit.collider == null)
+        
+        Debug.Log(tii.collider);
+        //Debug.Log(tii.point);
+        if (tii.collider)
         {
             currentlyGappling = true;
-            target = (Vector2)playerTransform.position - direction;
-            Debug.Log(target);
+            //target = (Vector2)playerTransform.position - direction;
+            target = tii.point;
+            //Debug.Log(target);
             hook.enabled = true;
             hook.positionCount = 2;
 
             StartCoroutine(Grappling());
         }
+        
     }
 
     IEnumerator Grappling()

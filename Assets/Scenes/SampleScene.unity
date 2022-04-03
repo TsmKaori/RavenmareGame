@@ -10584,6 +10584,7 @@ MonoBehaviour:
   - {fileID: 1780693390}
   - {fileID: 1813063449}
   - {fileID: 34969728}
+  abilitySystem: {fileID: 390436313}
 --- !u!4 &1871525666
 Transform:
   m_ObjectHideFlags: 0

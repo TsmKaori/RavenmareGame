@@ -23,6 +23,8 @@ public class WaveController : MonoBehaviour
 
     private bool canSpawn = true;   //This indicate if can spawn. Turn off if dont want to spawn intitally
     private float nextSpawnT;
+
+    public AbilitySystem abilitySystem;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +40,28 @@ public class WaveController : MonoBehaviour
         GameObject[] totEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         if(totEnemies.Length == 0 && !canSpawn && currWaveNum+1 != waves.Length)
         {
-            //Add wave interval here. This area can buffer until the next call
             currWaveNum++;
+            if (currWaveNum == 1)        //Add ability or whatever else need to be happen after whatever wave here
+            {
+                abilitySystem.unlockAbilties(AbilitySystem.SkillType.inferno);
+            }
+            else if (currWaveNum == 2)
+            {
+                abilitySystem.unlockAbilties(AbilitySystem.SkillType.ringOfFire);
+            }
+            else if (currWaveNum == 3)
+            {
+                abilitySystem.unlockAbilties(AbilitySystem.SkillType.grappling);
+            }
+            else if (currWaveNum == 4)
+            {
+                abilitySystem.unlockAbilties(AbilitySystem.SkillType.rapidFire);
+            }
+            else if (currWaveNum == 5)
+            {
+
+            }
+            //Add wave interval here. This area can buffer until the next call
             canSpawn = true;
         }
     }

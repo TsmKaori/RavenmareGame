@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     private float currentHealth = 100;
     [SerializeField]
     private bool showAttackRadius = false;
+    [SerializeField]
+    private Animator basicEnemyAnimator;
 
     // enemy private state
     private bool isChasing = false;
@@ -81,7 +83,13 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         if(isChasing) {
+            basicEnemyAnimator.SetBool("isMoving", true);
             rigidbody.velocity = (player.transform.position - transform.position) * speed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            Debug.Log("Not moving");
+            basicEnemyAnimator.SetBool("isMoving", false);
         }
     }
 
@@ -96,15 +104,23 @@ public class Enemy : MonoBehaviour
     }
 
     void die() {
-        System.Random rnd = new System.Random();
-        int gold = rnd.Next(5, 10);
-        playerScript.addGold(gold);
-        Destroy(gameObject);
+        rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        basicEnemyAnimator.SetTrigger("death");
+        StartCoroutine(death());
     }
 
     IEnumerator freeze(int secs)
     {
         yield return new WaitForSeconds(secs);
         rigidbody.constraints = RigidbodyConstraints2D.None;
+    }
+
+    IEnumerator death()
+    {
+        yield return new WaitForSeconds(1f);
+        System.Random rnd = new System.Random();
+        int gold = rnd.Next(5, 10);
+        playerScript.addGold(gold);
+        Destroy(gameObject);
     }
 }

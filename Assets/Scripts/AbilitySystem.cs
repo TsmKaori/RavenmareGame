@@ -26,6 +26,7 @@ public class AbilitySystem : MonoBehaviour
     public int ability2Cooldown = 0;
     public int ability3Cooldown = 0;
 
+    bool basicBulletIsCoolDown;
     bool explodingProjectileIsCooldown;
     bool freezeIsCooldown;
     bool burningIsCoolDown;
@@ -34,6 +35,7 @@ public class AbilitySystem : MonoBehaviour
     bool rapidFireIsCooldown;
     bool electricityIsCooldown;
 
+    public float basicBulletCooldown = 1;
     public float explodingProjectileCooldown = 30;
     public float freezeCooldown = 30;
     public float burningCooldown = 30;
@@ -73,6 +75,7 @@ public class AbilitySystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        basicBulletIsCoolDown = false;
         explodingProjectileIsCooldown = false;
         freezeIsCooldown = false;
         burningIsCoolDown = false;
@@ -92,6 +95,12 @@ public class AbilitySystem : MonoBehaviour
     void Update()
     {
         UseAbility();
+
+        if (Input.GetKeyDown(KeyCode.E) && basicBulletIsCoolDown != true)
+        {
+            shootingScript.basicBullet();
+            StartCoroutine(StartCooldown(1f));
+        }
 
         if (explodingProjectileIsCooldown)
         {
@@ -209,7 +218,7 @@ public class AbilitySystem : MonoBehaviour
         }
 
         //Set up which one
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             useAbility1();
         }
@@ -327,8 +336,8 @@ public class AbilitySystem : MonoBehaviour
 
     public IEnumerator StartCooldown(float CooldownDuration)
     {
-        IsAvailable = false;
+        basicBulletIsCoolDown = true;
         yield return new WaitForSeconds(CooldownDuration);
-        IsAvailable = true;
+        basicBulletIsCoolDown = false;
     }
 }

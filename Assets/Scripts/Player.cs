@@ -27,8 +27,8 @@ public class Player : MonoBehaviour
     private int gold = 0;
 
     public int attackDamage = 40;
-    private float attackTime = .25f;
-    private float attackCounter = .25f;
+    private float attackTime = 0.25f;
+    private float attackCounter = 0.25f;
     private bool isAttack;
     private bool isCooling = false;
     private Vector2 inputVector;
@@ -73,11 +73,14 @@ public class Player : MonoBehaviour
             }
 
             // handle input
-            inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            inputVector.Normalize();
-            playerAnimator.SetFloat("moveX", inputVector.x);
-            playerAnimator.SetFloat("moveY", inputVector.y);
-            playerAnimator.SetFloat("velocity", inputVector.magnitude);
+            if (!isAttack)
+            {
+                inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                inputVector.Normalize();
+                playerAnimator.SetFloat("moveX", inputVector.x);
+                playerAnimator.SetFloat("moveY", inputVector.y);
+                playerAnimator.SetFloat("velocity", inputVector.magnitude);
+            }
 
             if (isAttack)
             {
@@ -85,6 +88,7 @@ public class Player : MonoBehaviour
                 attackCounter -= Time.deltaTime;
                 if (attackCounter <= 0)
                 {
+                    //playerRigidbody.constraints = RigidbodyConstraints2D.None;
                     playerAnimator.SetBool("isAttacking", false);
                     isAttack = false;
                 }
@@ -93,6 +97,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q) && !isCooling)
             {
                 attackCounter = attackTime;
+                //playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
                 playerAnimator.SetBool("isAttacking", true);
                 isAttack = true;
                 currentHeat = Math.Min(100.0f, currentHeat + 10f);
@@ -105,6 +110,17 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!isAttack)
+        {
+            playerRigidbody.velocity = inputVector * speed * Time.fixedDeltaTime;
+
+            if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+            {
+                playerAnimator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                playerAnimator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            }
+        }
+        /*
         playerRigidbody.velocity = inputVector * speed * Time.fixedDeltaTime;
 
         if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 ||  Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
@@ -112,6 +128,7 @@ public class Player : MonoBehaviour
             playerAnimator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
             playerAnimator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
+        */
     }
 
     void OnCollisionEnter2D(Collision2D collision)

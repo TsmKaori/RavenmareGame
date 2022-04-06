@@ -12,6 +12,7 @@ public class shooting : MonoBehaviour
 
     public GameObject explosionProjPrefab;
     public GameObject rapidFireProjPrefab;
+    public GameObject basicBulletPrefab;
     //public GameObject freezePrefab;
     [SerializeField]
     private Animator playerAnimator;
@@ -47,6 +48,35 @@ public class shooting : MonoBehaviour
         {
             facing = "down";
         }
+    }
+
+    public void basicBullet() {
+        GameObject basicBulletAmmo;
+        if (facing.Equals("up"))
+        {
+            basicBulletAmmo = Instantiate(basicBulletPrefab, upFirePoint.position, upFirePoint.rotation);
+            Rigidbody2D rb = basicBulletAmmo.GetComponent<Rigidbody2D>();
+            rb.AddForce(Vector3.up * bulletForce, ForceMode2D.Impulse);
+        }
+        else if (facing.Equals("down"))
+        {
+            basicBulletAmmo = Instantiate(basicBulletPrefab, downFirePoint.position, downFirePoint.rotation);
+            Rigidbody2D rb = basicBulletAmmo.GetComponent<Rigidbody2D>();
+            rb.AddForce(Vector3.down * bulletForce, ForceMode2D.Impulse);
+        }
+        else if (facing.Equals("right"))
+        {
+            basicBulletAmmo = Instantiate(basicBulletPrefab, rightFirePoint.position, rightFirePoint.rotation);
+            Rigidbody2D rb = basicBulletAmmo.GetComponent<Rigidbody2D>();
+            rb.AddForce(Vector3.right * bulletForce, ForceMode2D.Impulse);
+        }
+        else
+        {
+            basicBulletAmmo = Instantiate(basicBulletPrefab, leftFirePoint.position, leftFirePoint.rotation);
+            Rigidbody2D rb = basicBulletAmmo.GetComponent<Rigidbody2D>();
+            rb.AddForce(Vector3.left * bulletForce, ForceMode2D.Impulse);
+        }
+        //yield return new WaitForSeconds(1f);
     }
 
     public void shoot()

@@ -60,7 +60,7 @@ public class GrappleAbility : MonoBehaviour
         }
     }
 
-    public void BeginGrapple()
+    public bool BeginGrapple()
     {
         Vector2 direction;
         if (playerAnimator.GetFloat("lastMoveX") < -0.1) //left facing
@@ -84,12 +84,9 @@ public class GrappleAbility : MonoBehaviour
 
        bool hit = Physics2D.Raycast(playerTransform.position, direction, 5f, gappleMask);
 
-        Debug.Log(direction);
        RaycastHit2D tii = Physics2D.Raycast(playerTransform.position, direction, 5f, ~gappleMask);
 
         
-        Debug.Log(tii.collider);
-        //Debug.Log(tii.point);
         if (tii.collider)
         {
             currentlyGappling = true;
@@ -100,6 +97,11 @@ public class GrappleAbility : MonoBehaviour
             hook.positionCount = 2;
 
             StartCoroutine(Grappling());
+            return true;
+        }
+        else
+        {
+            return false;
         }
         
     }

@@ -55,6 +55,7 @@ public class AbilitySystem : MonoBehaviour
 
     public Image explodingProjectileCenterPic;
     public Image freezeCenterPic;
+    public Image freezeCenterPic2;
     public Image burningCenterPic;
     public Image ringOfFireCenterPic;
     public Image grapplingCenterPic;
@@ -123,6 +124,7 @@ public class AbilitySystem : MonoBehaviour
                 freezePic.fillAmount = 1;
                 freezeIsCooldown = false;
                 freezeCenterPic.enabled = true;
+                freezeCenterPic2.enabled = true;
             }
         }
 
@@ -266,6 +268,7 @@ public class AbilitySystem : MonoBehaviour
         {
             freezeIsCooldown = true;
             freezeCenterPic.enabled = false;
+            freezeCenterPic2.enabled = false;
 
             freezePic.fillAmount = 0;
             GameObject freezeEffect = Instantiate(freezePrefab, player.transform.position, player.transform.rotation);
@@ -306,11 +309,15 @@ public class AbilitySystem : MonoBehaviour
         
         if (grapplingIsCooldown == false && unlockedSkills.Contains(SkillType.grappling))
         {
-            grapplingIsCooldown= true;
-            grapplingCenterPic.enabled = false;
+            bool actuallyGrapple = grapplingScript.BeginGrapple();
+            if(actuallyGrapple)
+            {
+                grapplingIsCooldown = true;
+                grapplingCenterPic.enabled = false;
 
-            grapplingPic.fillAmount = 0;
-            grapplingScript.BeginGrapple();
+                grapplingPic.fillAmount = 0;
+                grapplingScript.BeginGrapple();
+            }
         }
         
     }

@@ -314,6 +314,7 @@ MonoBehaviour:
   electricityPic: {fileID: 0}
   explodingProjectileCenterPic: {fileID: 0}
   freezeCenterPic: {fileID: 0}
+  freezeCenterPic2: {fileID: 0}
   burningCenterPic: {fileID: 0}
   ringOfFireCenterPic: {fileID: 0}
   grapplingCenterPic: {fileID: 0}
@@ -1796,6 +1797,7 @@ MonoBehaviour:
   electricityPic: {fileID: 903301907}
   explodingProjectileCenterPic: {fileID: 1190106101}
   freezeCenterPic: {fileID: 905428055}
+  freezeCenterPic2: {fileID: 1241943597}
   burningCenterPic: {fileID: 1233809114}
   ringOfFireCenterPic: {fileID: 278258041}
   grapplingCenterPic: {fileID: 815395578}
@@ -10195,7 +10197,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012946129, y: 0.004925728}
+  m_Offset: {x: -0.015525937, y: -0.00023412704}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10206,7 +10208,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.68762887, y: 0.63511276}
+  m_Size: {x: 0.7237457, y: 0.60415554}
   m_EdgeRadius: 0
 --- !u!4 &1740020435
 Transform:
@@ -10215,7 +10217,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740020432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10241,7 +10243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   chaseRadius: 10
-  attackRadius: 2
+  attackRadius: 1
   attackDamage: 10
   currentHealth: 100
   showAttackRadius: 1
@@ -11044,6 +11046,16 @@ MonoBehaviour:
     spawnInterval: 1
   - nameOfWave: Wave 3
     numOfEnemies: 3
+    typeOfEnemies:
+    - {fileID: 1740020432}
+    spawnInterval: 1
+  - nameOfWave: Wave 4
+    numOfEnemies: 5
+    typeOfEnemies:
+    - {fileID: 1740020432}
+    spawnInterval: 1
+  - nameOfWave: Wave 5
+    numOfEnemies: 8
     typeOfEnemies:
     - {fileID: 1740020432}
     spawnInterval: 1

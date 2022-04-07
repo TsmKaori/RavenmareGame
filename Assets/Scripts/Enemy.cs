@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(attackRadius);
         attackRadiusVisual.SetActive(showAttackRadius);
         if(showAttackRadius) {
             attackRadiusVisual.transform.localScale = new Vector3(attackRadius * 2.0f, attackRadius * 2.0f, 0f);

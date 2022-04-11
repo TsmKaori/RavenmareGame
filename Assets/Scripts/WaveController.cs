@@ -35,6 +35,9 @@ public class WaveController : MonoBehaviour
     public TMP_Text countdownBuffer;
     public float timeRemaining = 32;
 
+    [SerializeField] LayerMask gappleMask;
+    [SerializeField] Transform playerTransform;
+    public bool[] activeSpawnPoint;
 
     public 
     // Start is called before the first frame update
@@ -46,6 +49,23 @@ public class WaveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for(int i = 0; i < spawnPoints.Length; i++)
+        {
+            Vector2 direction = spawnPoints[i].position - playerTransform.position;
+            float dist = Vector2.Distance(spawnPoints[i].position, playerTransform.position);
+            RaycastHit2D rayc = Physics2D.Raycast(playerTransform.position, direction, dist, ~gappleMask);
+
+            if (rayc.collider)
+            {
+                activeSpawnPoint[i] = false;
+            }
+            else
+            {
+                //Debug.Log("turn true");
+                activeSpawnPoint[i] = true;
+            }
+        }
+
         currWave = waves[currWaveNum];
         SpawnWave();
 
@@ -106,9 +126,31 @@ public class WaveController : MonoBehaviour
         if (canSpawn && nextSpawnT < Time.time)
         {
             GameObject ranEnemy = currWave.typeOfEnemies[Random.Range(0, currWave.typeOfEnemies.Length)];
-            Transform ranPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            //Debug.Log(ranPoint.position);
-            Instantiate(ranEnemy, ranPoint.position, Quaternion.identity);
+            int random = Random.Range(0, spawnPoints.Length);
+            int breakpoint = 0;
+            Transform ranPoint;
+            while (!activeSpawnPoint[random])
+            {
+                random = Random.Range(0, spawnPoints.Length);
+                //Debug.Log(activeSpawnPoint[random] + "  here");
+                breakpoint++;
+                if(breakpoint > 10000)
+                {
+                    break;
+                }
+            }
+            ranPoint = spawnPoints[random];
+            Debug.Log(activeSpawnPoint[random]);
+            if(breakpoint <= 10000)
+            {
+                Instantiate(ranEnemy, ranPoint.position, Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("really random");
+                Vector3 newPos = new Vector3(playerTransform.position.x, playerTransform.position.y + 1, playerTransform.position.z);
+                Instantiate(ranEnemy, newPos, Quaternion.identity);
+            }
 
             currWave.numOfEnemies--;
             nextSpawnT = Time.time + currWave.spawnInterval;

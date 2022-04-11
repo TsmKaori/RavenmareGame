@@ -10,7 +10,7 @@ public class Knockback : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("wee");
+            //Debug.Log("wee");
             Rigidbody2D enemy = collision.GetComponent<Rigidbody2D>();
             StartCoroutine(KnockCoroutine(enemy));
         }

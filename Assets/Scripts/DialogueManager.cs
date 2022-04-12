@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     List<Dialogue> dialogList;
     Image currentpic;
 
+    public bool dialogueActive = false; 
+
     private Queue<string> sentences;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (List<Dialogue> dialogue)
     {
+        dialogueActive = true;
         dialogueObject.SetActive(true);
 
         dialogueCount = dialogue.Count;
@@ -95,6 +98,7 @@ public class DialogueManager : MonoBehaviour
                     currentpic.gameObject.SetActive(false);
                 }
                 dialogueObject.SetActive(false);
+                dialogueActive = false;
                 return;
             }
             foreach (string sentenc in dialogList[i].sentences)

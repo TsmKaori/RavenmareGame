@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &44571605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -564,6 +564,7 @@ MonoBehaviour:
   LokiPicture: {fileID: 348075091}
   TojiPicture: {fileID: 475347142}
   dialogueObject: {fileID: 522940624}
+  dialogueActive: 0
 --- !u!1 &162483888
 GameObject:
   m_ObjectHideFlags: 0
@@ -6072,6 +6073,46 @@ MonoBehaviour:
     sentences:
     - My name is Toji
     - Hello
+  firstWaveDialogue:
+  - name: 
+    sentences:
+    - There will be multiple waves. Your task is to defeat the enemies to proceed
+      to the next wave. At the end of each wave. There will be a break period (30
+      seconds) where you can rest and buy things. To move press w to move up, a to
+      move left, d to move right and s to move down.
+    - Use Q to attack and click on the abilities in the abilties bar to use them.
+      Each of these abilities will have certain cooldowns. The top most ability will
+      release a projectle that will explode on contact. The next ability will freeze
+      all the enemies it makes contact with.
+    - Click next to start the next wave.
+  secondWaveDialogue:
+  - name: 
+    sentences:
+    - You will acquire more abilties over time. This new abilties cast a burning
+      field. Whenever an enemy steps over this field. They will take damage over
+      time. Use these abilties carefully as they will be useful over time.
+    - Click next to start the next wave.
+  thirdWaveDialogue:
+  - name: 
+    sentences:
+    - 'You unlocked ring of fire ability! This will release fire in all direction.
+      All of the enemies will take damage from each fire. Also, noticed each will
+      be bring new enemies and more of them.  '
+    - 'Click next to start the next wave. '
+  fourthWaveDialogue:
+  - name: 
+    sentences:
+    - You unlocked the grappling ability! You can only use this if the line of version
+      is clear. This will attach to any object besides from enemies and when the
+      grapple reach an object. You will fly to the destination that the grapple lands
+      on.
+    - Click next to start the next wave.
+  fifthWaveDialogue:
+  - name: 
+    sentences:
+    - 'You unlocked the final ability for this level. This is rapid fire which will
+      release a many projectiles at the enemies. '
+    - Click next to start the next wave.
 --- !u!114 &522940627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12086,27 +12127,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - nameOfWave: Wave 1
-    numOfEnemies: 1
-    typeOfEnemies:
-    - {fileID: 1740020432}
-    spawnInterval: 1
-  - nameOfWave: Wave 2
-    numOfEnemies: 2
-    typeOfEnemies:
-    - {fileID: 1740020432}
-    spawnInterval: 1
-  - nameOfWave: Wave 3
     numOfEnemies: 3
     typeOfEnemies:
     - {fileID: 1740020432}
     spawnInterval: 1
-  - nameOfWave: Wave 4
+  - nameOfWave: Wave 2
     numOfEnemies: 5
     typeOfEnemies:
     - {fileID: 1740020432}
     spawnInterval: 1
+  - nameOfWave: Wave 3
+    numOfEnemies: 10
+    typeOfEnemies:
+    - {fileID: 1740020432}
+    spawnInterval: 0.7
+  - nameOfWave: Wave 4
+    numOfEnemies: 20
+    typeOfEnemies:
+    - {fileID: 1740020432}
+    spawnInterval: 1
   - nameOfWave: Wave 5
-    numOfEnemies: 8
+    numOfEnemies: 50
     typeOfEnemies:
     - {fileID: 1740020432}
     spawnInterval: 1
@@ -12132,6 +12173,9 @@ MonoBehaviour:
     m_Bits: 64
   playerTransform: {fileID: 174301729}
   activeSpawnPoint: 0101010101010101010101
+  dialogueSys: {fileID: 522940626}
+  dialogue: {fileID: 72385669}
+  firstWaveDialogue: 1
 --- !u!4 &1871525666
 Transform:
   m_ObjectHideFlags: 0

@@ -39,7 +39,9 @@ public class WaveController : MonoBehaviour
     [SerializeField] Transform playerTransform;
     public bool[] activeSpawnPoint;
 
-    public 
+    public DialogueTrigger dialogueSys;
+    public DialogueManager dialogue;
+    public bool firstWaveDialogue = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,9 +67,17 @@ public class WaveController : MonoBehaviour
                 activeSpawnPoint[i] = true;
             }
         }
-
+        
         currWave = waves[currWaveNum];
-        SpawnWave();
+        if(currWaveNum == 0 && firstWaveDialogue)  //first dialogue before first wave
+        {
+            triggerNextWaveActions();
+            firstWaveDialogue = false;
+        }
+        if (!dialogue.dialogueActive)  //spawn next if dialogue is not active
+        {
+            SpawnWave();
+        }
 
         GameObject[] totEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         if(totEnemies.Length == 0 && canAnimate && currWaveNum+1 != waves.Length)
@@ -97,28 +107,40 @@ public class WaveController : MonoBehaviour
     void spawnNext()
     {
         currWaveNum++;
-        if (currWaveNum == 1)        //Add ability or whatever else need to be happen after whatever wave here
+        triggerNextWaveActions();
+        canSpawn = true;
+    }
+
+    void triggerNextWaveActions()
+    {
+        if (currWaveNum == 0)
+        {
+            dialogueSys.triggerFirstWaveDialogue();
+        }
+        else if (currWaveNum == 1)        //Add ability or whatever else need to be happen after whatever wave here
         {
             abilitySystem.unlockAbilties(AbilitySystem.SkillType.inferno);
+            dialogueSys.triggerSecondWaveDialogue();
         }
         else if (currWaveNum == 2)
         {
             abilitySystem.unlockAbilties(AbilitySystem.SkillType.ringOfFire);
+            dialogueSys.triggerThirdWaveDialogue();
         }
         else if (currWaveNum == 3)
         {
             abilitySystem.unlockAbilties(AbilitySystem.SkillType.grappling);
+            dialogueSys.triggerFourthWaveDialogue();
         }
         else if (currWaveNum == 4)
         {
             abilitySystem.unlockAbilties(AbilitySystem.SkillType.rapidFire);
+            dialogueSys.triggerFifthWaveDialogue();
         }
         else if (currWaveNum == 5)
         {
 
         }
-        //Add wave interval here. This area can buffer until the next call
-        canSpawn = true;
     }
 
     void SpawnWave()
@@ -147,8 +169,8 @@ public class WaveController : MonoBehaviour
             }
             else
             {
-                Debug.Log("really random");
-                Vector3 newPos = new Vector3(playerTransform.position.x, playerTransform.position.y + 1, playerTransform.position.z);
+                //Debug.Log("really random");
+                Vector3 newPos = new Vector3(playerTransform.position.x+1, playerTransform.position.y, playerTransform.position.z);
                 Instantiate(ranEnemy, newPos, Quaternion.identity);
             }
 

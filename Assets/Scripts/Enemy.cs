@@ -120,6 +120,7 @@ public class Enemy : MonoBehaviour
 
     void die() {
         rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         basicEnemyAnimator.SetTrigger("death");
         StartCoroutine(death());
     }

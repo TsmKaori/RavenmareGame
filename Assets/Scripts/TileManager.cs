@@ -7,10 +7,12 @@ public class TileManager : MonoBehaviour
 {
     [SerializeField] private Transform heroTransform;
 
-    [SerializeField] private Tilemap groundTileMap;
+    [SerializeField] private Tilemap groundTilemap;
+    [SerializeField] private Tilemap detailTilemap;
     [SerializeField] private Tilemap collisionTilemap;
 
     [SerializeField] private Tile groundTile;
+    [SerializeField] private Tile detailTile;
     [SerializeField] private Tile wallDownTile;
     [SerializeField] private Tile wallUpTile;
 
@@ -58,15 +60,18 @@ public class TileManager : MonoBehaviour
             revealedCollisionTiles[0] = new Vector3Int(standingX + (8 * right), 5);
             revealedCollisionTiles[1] = new Vector3Int(standingX + (8 * right), -6);
 
-            groundTileMap.SetTiles(revealedGroundTiles, groundTileColumn);
+            groundTilemap.SetTiles(revealedGroundTiles, groundTileColumn);
             collisionTilemap.SetTiles(revealedCollisionTiles, collisionTileColumn);
+
+            if (Random.Range(0f, 4f) > 3)
+            {
+                detailTilemap.SetTile(new Vector3Int(standingX + (8 * right), Random.Range(-5, 5)), detailTile);
+            }
         }
+
+
 
         previousX = standingX;
         previousY = standingY;
-
-
-
-
     }
 }

@@ -27,6 +27,10 @@ public class Enemy : MonoBehaviour
     private bool isAttacking = false;
     private float timeSinceAttack = 0f;
     private float attackCooldown = 1f;
+    private bool isKnockedBacked = false;
+    private float timeSinceKnockback = 0f;
+    private float knockbackCooldown = .1f;
+    private float knockbackSpeed = 100f;
     private float maxHealth = 100;
 
     // enemy gameobjects
@@ -89,13 +93,23 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Not moving");
             basicEnemyAnimator.SetBool("isMoving", false);
         }
+        if(isKnockedBacked) {
+            if(timeSinceKnockback >= knockbackCooldown) {
+                isKnockedBacked = false;
+            } else {
+                timeSinceKnockback += Time.fixedDeltaTime;
+                rigidbody.velocity = (transform.position - player.transform.position) * knockbackSpeed * Time.fixedDeltaTime;
+            }
+        }
+
     }
 
     public void takeDamage(float damage) {
         currentHealth = Math.Max(0f, currentHealth - damage);
+        isKnockedBacked = true;
+        timeSinceKnockback = 0f;
     }
 
     public void freezeAbility()

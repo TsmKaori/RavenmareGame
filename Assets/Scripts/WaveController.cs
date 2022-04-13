@@ -39,6 +39,8 @@ public class WaveController : MonoBehaviour
     [SerializeField] Transform playerTransform;
     public bool[] activeSpawnPoint;
 
+    [SerializeField] GameObject shopDialog;
+
     public DialogueTrigger dialogueSys;
     public DialogueManager dialogue;
     public bool firstWaveDialogue = true;

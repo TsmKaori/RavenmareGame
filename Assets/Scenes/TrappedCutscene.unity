@@ -155,6 +155,9 @@ MonoBehaviour:
   nameText: {fileID: 771497178}
   dialogueText: {fileID: 915097243}
   LokiPicture: {fileID: 1582407850}
+  TojiPicture: {fileID: 0}
+  dialogueObject: {fileID: 0}
+  dialogueActive: 0
 --- !u!4 &341806655
 Transform:
   m_ObjectHideFlags: 0
@@ -203,10 +206,10 @@ RectTransform:
   m_Father: {fileID: 1518162504}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -226.17346, y: 58.1}
-  m_SizeDelta: {x: 63.5806, y: 16.1395}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 86, y: -25}
+  m_SizeDelta: {x: 80, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771497178
 MonoBehaviour:
@@ -338,10 +341,10 @@ RectTransform:
   m_Father: {fileID: 1518162504}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.0098, y: 3.3468}
-  m_SizeDelta: {x: 553.98, y: 68.694}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: -40, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &915097243
 MonoBehaviour:
@@ -692,10 +695,10 @@ RectTransform:
   m_Father: {fileID: 1518162504}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 268.3117, y: -50.0838}
-  m_SizeDelta: {x: 21.916, y: 21.7373}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -30, y: 30}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304680730
 MonoBehaviour:
@@ -829,10 +832,10 @@ RectTransform:
   m_Father: {fileID: 1668351126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91, y: -96.999985}
-  m_SizeDelta: {x: 656.2966, y: 173.2108}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: -20, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1518162505
 MonoBehaviour:
@@ -884,12 +887,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55af5c0903670a84098d2108e383ebf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Loki
-    sentences:
-    - I like pie
-    - Same with me
-    - nope
+  trapSceneDialogue: []
+  firstWaveDialogue: []
+  secondWaveDialogue: []
+  thirdWaveDialogue: []
+  fourthWaveDialogue: []
+  fifthWaveDialogue: []
 --- !u!1 &1582407848
 GameObject:
   m_ObjectHideFlags: 0

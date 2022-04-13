@@ -156,4 +156,8 @@ public class DialogueManager : MonoBehaviour
         //LokiPicture.enabled = false;
         //Set Dialogue box inactive here
     }
+
+    public void CloseDialogue(GameObject dialogue) {
+        dialogue.SetActive(false);
+    }
 }

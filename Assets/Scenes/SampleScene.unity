@@ -5011,7 +5011,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5101,7 +5101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
@@ -5111,7 +5111,7 @@ MonoBehaviour:
   m_RefResolutionY: 480
   m_UpscaleRT: 1
   m_PixelSnapping: 0
-  m_CropFrameX: 0
+  m_CropFrameX: 1
   m_CropFrameY: 0
   m_StretchFill: 0
 --- !u!1 &521338537
@@ -9215,9 +9215,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroTransform: {fileID: 174301729}
-  groundTileMap: {fileID: 455641539}
+  groundTilemap: {fileID: 455641539}
+  detailTilemap: {fileID: 521338541}
   collisionTilemap: {fileID: 876303228}
   groundTile: {fileID: 11400000, guid: c8b46a0be619ec54da740b37b30e861d, type: 2}
+  detailTile: {fileID: 11400000, guid: 6db2552e16064214489167fecddb2db9, type: 2}
   wallDownTile: {fileID: 11400000, guid: 54faf567fe8de7c4ab676922ec573d7c, type: 2}
   wallUpTile: {fileID: 11400000, guid: 4d7de3090738dd340a99e2728bdc6150, type: 2}
 --- !u!1 &1172767778

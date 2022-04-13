@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     private Text goldText;
     [SerializeField]
     private Text numHealthPotionsText;
+    [SerializeField]
+    private GameObject gameOverScreen;
 
     private int gold = 0;
 
@@ -104,6 +106,7 @@ public class Player : MonoBehaviour
             }
             if(currentHealth <= 0) {
                 isDead = true;
+                StartCoroutine(gameOver());
             }
         }
     }
@@ -137,6 +140,16 @@ public class Player : MonoBehaviour
         if (gameObject.tag == "Enemy")                  //If get hits by basic enemy
         {
             takeDamage(attackDamage);
+        }
+    }
+
+    IEnumerator gameOver()
+    {
+        gameOverScreen.SetActive(true);
+        CanvasGroup cg = gameOverScreen.GetComponent<CanvasGroup>();
+        for(int i = 0; i <= 100; i++) {
+            cg.alpha = i / 100f;
+            yield return new WaitForSeconds(.01f);
         }
     }
 

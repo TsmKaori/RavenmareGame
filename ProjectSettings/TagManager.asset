@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 3918917511
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 2738113629
     locked: 0

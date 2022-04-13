@@ -42,9 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Enemies
+  - name: Midground
     uniqueID: 3918917511
     locked: 0
-  - name: New Layer 2
-    uniqueID: 2738113629
+  - name: Foreground
+    uniqueID: 3843901013
     locked: 0

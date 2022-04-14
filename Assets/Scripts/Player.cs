@@ -60,9 +60,8 @@ public class Player : MonoBehaviour
             // update UI
             updateHealthBar();
             updateHeatBar();
-            goldText.text = "Gold: " + gold;
-            numHealthPotionsText.text = "Potions: " + numHealthPotions;
-
+            goldText.text = gold + "";
+            numHealthPotionsText.text = numHealthPotions + "";
             // update heat
             currentHeat = Math.Max(currentHeat - 5.0f * Time.deltaTime, 0f);
             if (currentHeat >= maxHeat)

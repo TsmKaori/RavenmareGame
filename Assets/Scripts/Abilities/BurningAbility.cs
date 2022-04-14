@@ -23,7 +23,7 @@ public class BurningAbility : MonoBehaviour
         if (gameObject.tag == "Enemy")
         {
             Enemy enemyScript = gameObject.GetComponent<Enemy>();
-            enemyScript.takeDamage(0.3f);
+            enemyScript.takeDamageNoKnockback(0.3f);
         }
     }
 

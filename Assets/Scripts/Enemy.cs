@@ -112,6 +112,11 @@ public class Enemy : MonoBehaviour
         timeSinceKnockback = 0f;
     }
 
+    public void takeDamageNoKnockback(float damage)
+    {
+        currentHealth = Math.Max(0f, currentHealth - damage);
+    }
+
     public void freezeAbility()
     {
         rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;

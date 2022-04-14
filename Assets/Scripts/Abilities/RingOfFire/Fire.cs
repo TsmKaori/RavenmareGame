@@ -23,7 +23,7 @@ public class Fire : MonoBehaviour
         if (gameObject.tag == "Enemy")
         {
             Enemy enemyScript = gameObject.GetComponent<Enemy>();
-            enemyScript.takeDamage(30f);
+            enemyScript.takeDamageNoKnockback(30f);
         }
     }
 }

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public List<Dialogue> trapSceneDialogue = new List<Dialogue>();
+    public List<Dialogue> firstTrapSceneDialogue = new List<Dialogue>();
+    public List<Dialogue> secondTrapSceneDialogue = new List<Dialogue>();
+
+
     public List<Dialogue> firstWaveDialogue = new List<Dialogue>();
     public List<Dialogue> secondWaveDialogue = new List<Dialogue>();
     public List<Dialogue> thirdWaveDialogue = new List<Dialogue>();
@@ -12,9 +15,13 @@ public class DialogueTrigger : MonoBehaviour
     public List<Dialogue> fifthWaveDialogue = new List<Dialogue>();
     //public Dialogue dialogue;
 
-    public void TriggerDialogue()
+    public void TriggerFirstCutSceneDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(trapSceneDialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(firstTrapSceneDialogue);
+    }
+    public void TriggerSecondCutSceneDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(secondTrapSceneDialogue);
     }
 
     public void triggerFirstWaveDialogue()

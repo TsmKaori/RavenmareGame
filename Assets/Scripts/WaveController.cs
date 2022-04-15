@@ -33,7 +33,7 @@ public class WaveController : MonoBehaviour
 
     public TMP_Text waveCompleteText;
     public TMP_Text countdownBuffer;
-    public float timeRemaining = 32;
+    public float timeRemaining = 17;
 
     [SerializeField] LayerMask gappleMask;
     [SerializeField] Transform playerTransform;
@@ -99,7 +99,7 @@ public class WaveController : MonoBehaviour
             if (timeRemaining <= 0)
             {
                 currentlyCountdown = false;
-                timeRemaining = 32;
+                timeRemaining = 17;
                 animator.SetTrigger("BufferComplete");
                 //spawnNext();
             }

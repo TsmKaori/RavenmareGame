@@ -19,11 +19,11 @@ public class Fire : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)  //AOE hit 
     {
         GameObject gameObject = collision.gameObject;
-        Debug.Log("hit");
+        //Debug.Log("hit");
         if (gameObject.tag == "Enemy")
         {
             Enemy enemyScript = gameObject.GetComponent<Enemy>();
-            enemyScript.takeDamageNoKnockback(30f);
+            enemyScript.takeDamageNoKnockback(15f);
         }
     }
 }

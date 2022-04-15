@@ -13893,7 +13893,7 @@ MonoBehaviour:
   animator: {fileID: 1871525667}
   waveCompleteText: {fileID: 0}
   countdownBuffer: {fileID: 1580108240}
-  timeRemaining: 32
+  timeRemaining: 17
   gappleMask:
     serializedVersion: 2
     m_Bits: 64

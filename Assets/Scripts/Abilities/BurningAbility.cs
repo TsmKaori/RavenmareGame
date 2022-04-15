@@ -19,14 +19,26 @@ public class BurningAbility : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)  //AOE hit 
     {
         GameObject gameObject = collision.gameObject;
-        Debug.Log("hit");
+        //Debug.Log("hit");
         if (gameObject.tag == "Enemy")
         {
             Enemy enemyScript = gameObject.GetComponent<Enemy>();
-            enemyScript.takeDamageNoKnockback(0.3f);
+            enemyScript.takeDamageNoKnockback(0.5f);
+            //Debug.Log("DOT");
         }
     }
-
+   
+    void OnTriggerEnter2D(Collider2D collision)  //AOE hit 
+    {
+        GameObject gameObject = collision.gameObject;
+        //Debug.Log("hit");
+        if (gameObject.tag == "Enemy")
+        {
+            Enemy enemyScript = gameObject.GetComponent<Enemy>();
+            enemyScript.takeDamageNoKnockback(5f);
+        }
+    }
+    
     private IEnumerator KillOnAnimationEnd()
     {
         yield return new WaitForSeconds(4);

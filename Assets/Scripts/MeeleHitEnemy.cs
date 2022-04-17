@@ -23,6 +23,10 @@ public class MeeleHitEnemy : MonoBehaviour
             if(gameObject.tag == "Enemy") {
                 Enemy enemyScript = gameObject.GetComponent<Enemy>();
                 enemyScript.takeDamage(40f);
+            }else if(gameObject.tag == "FirstLevelBoss")
+            {
+                FirstLevelBoss enemyScript = gameObject.GetComponent<FirstLevelBoss>();
+                enemyScript.takeDamageNoKnockback(40f);
             }
         }
     }

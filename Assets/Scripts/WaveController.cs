@@ -164,7 +164,7 @@ public class WaveController : MonoBehaviour
                 }
             }
             ranPoint = spawnPoints[random];
-            Debug.Log(activeSpawnPoint[random]);
+            //Debug.Log(activeSpawnPoint[random]);
             if(breakpoint <= 10000)
             {
                 Instantiate(ranEnemy, ranPoint.position, Quaternion.identity);

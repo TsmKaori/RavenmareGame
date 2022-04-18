@@ -37,6 +37,11 @@ public class BurningAbility : MonoBehaviour
             Enemy enemyScript = gameObject.GetComponent<Enemy>();
             enemyScript.takeDamageNoKnockback(5f);
         }
+        else if (gameObject.tag == "FirstLevelBoss")
+        {
+            FirstLevelBoss enemyScript = gameObject.GetComponent<FirstLevelBoss>();
+            enemyScript.takeDamageNoKnockback(5f);
+        }
     }
     
     private IEnumerator KillOnAnimationEnd()

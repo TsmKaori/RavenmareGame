@@ -25,5 +25,10 @@ public class Fire : MonoBehaviour
             Enemy enemyScript = gameObject.GetComponent<Enemy>();
             enemyScript.takeDamageNoKnockback(15f);
         }
+        else if (gameObject.tag == "FirstLevelBoss")
+        {
+            FirstLevelBoss enemyScript = gameObject.GetComponent<FirstLevelBoss>();
+            enemyScript.takeDamageNoKnockback(15f);
+        }
     }
 }

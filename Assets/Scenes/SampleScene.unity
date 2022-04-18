@@ -14231,6 +14231,9 @@ MonoBehaviour:
   bats: {fileID: 1740020432}
   basicBulletPrefab: {fileID: 3117392799723508450, guid: 83230d91ba4642b459fbab1d60fad232, type: 3}
   steamAttackPrefab: {fileID: 7685509762401570116, guid: 43d3e03898ec48544b7b73c1d5dfa30d, type: 3}
+  targetCirclePrefab: {fileID: 8270278412656429512, guid: e6d797f3abad55545a1f015c75a03efb, type: 3}
+  explosionPrefab: {fileID: 9025181704257550088, guid: f0f53f3eb2e8ade4cb37e47b90317d4a, type: 3}
+  hero: {fileID: 174301726}
   _interval: 2
   firstDef: 0
   secondDef: 0

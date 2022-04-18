@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Shop : MonoBehaviour
 {
@@ -19,9 +20,9 @@ public class Shop : MonoBehaviour
     private int healthPotionCost = 5;
 
     void Start() {
-        increaseMaxHealthUI.GetComponent<Text>().text += " (" + increaseMaxHealthCost + " gold)";
-        increaseAttackDamageUI.GetComponent<Text>().text += " (" + increaseAttackDamageCost + " gold)";
-        buyHealthPotionUI.GetComponent<Text>().text += " (" + healthPotionCost + " gold)";
+        increaseMaxHealthUI.GetComponent<TextMeshProUGUI>().text += " (" + increaseMaxHealthCost + " gold)";
+        increaseAttackDamageUI.GetComponent<TextMeshProUGUI>().text += " (" + increaseAttackDamageCost + " gold)";
+        buyHealthPotionUI.GetComponent<TextMeshProUGUI>().text += " (" + healthPotionCost + " gold)";
     }
 
     public void increaseMaxHealth() {

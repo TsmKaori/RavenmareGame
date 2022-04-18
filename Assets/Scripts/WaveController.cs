@@ -87,6 +87,7 @@ public class WaveController : MonoBehaviour
             animator.SetTrigger("WaveComplete");
             canAnimate = false;
             currentlyCountdown = true;
+            shopDialog.SetActive(true);
             //spawnNext();
         }
 
@@ -101,6 +102,7 @@ public class WaveController : MonoBehaviour
                 currentlyCountdown = false;
                 timeRemaining = 17;
                 animator.SetTrigger("BufferComplete");
+                shopDialog.SetActive(false);
                 //spawnNext();
             }
         }

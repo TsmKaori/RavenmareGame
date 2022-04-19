@@ -546,7 +546,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &72385669
 MonoBehaviour:
@@ -10082,7 +10082,7 @@ GameObject:
   - component: {fileID: 1127433179}
   m_Layer: 0
   m_Name: BatEnemy
-  m_TagString: Enemy
+  m_TagString: Bat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11196,8 +11196,9 @@ Transform:
   - {fileID: 1740020435}
   - {fileID: 1127433174}
   - {fileID: 1486935668}
+  - {fileID: 1824129732}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287290158
 GameObject:
@@ -11708,7 +11709,7 @@ GameObject:
   - component: {fileID: 1486935672}
   m_Layer: 0
   m_Name: SteamBotEnemy
-  m_TagString: Enemy
+  m_TagString: SteamBots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13610,7 +13611,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1790421216
 GameObject:
@@ -14081,7 +14082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1824129732
 Transform:
   m_ObjectHideFlags: 0
@@ -14100,8 +14101,8 @@ Transform:
   - {fileID: 1135954066}
   - {fileID: 1542387696}
   - {fileID: 1287290159}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1266747358}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1824129733
 SpriteRenderer:
@@ -14587,6 +14588,11 @@ MonoBehaviour:
     numOfEnemies: 50
     typeOfEnemies:
     - {fileID: 1740020432}
+    spawnInterval: 1
+  - nameOfWave: Boss
+    numOfEnemies: 1
+    typeOfEnemies:
+    - {fileID: 1824129731}
     spawnInterval: 1
   spawnPoints:
   - {fileID: 1780693390}

@@ -69,7 +69,7 @@ public class WaveController : MonoBehaviour
                 activeSpawnPoint[i] = true;
             }
         }
-        
+
         currWave = waves[currWaveNum];
         if(currWaveNum == 0 && firstWaveDialogue)  //first dialogue before first wave
         {
@@ -81,8 +81,15 @@ public class WaveController : MonoBehaviour
             SpawnWave();
         }
 
-        GameObject[] totEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(totEnemies.Length == 0 && canAnimate && currWaveNum+1 != waves.Length)
+        //GameObject[] totEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] totBoss = GameObject.FindGameObjectsWithTag("FirstLevelBoss");
+        GameObject[] totBats = GameObject.FindGameObjectsWithTag("Bat");
+        GameObject[] totSteamBot = GameObject.FindGameObjectsWithTag("SteamBots");
+        GameObject[] totRegEnemy = GameObject.FindGameObjectsWithTag("Enemy");
+
+        int totEnemies = totBoss.Length + totBats.Length + totSteamBot.Length + totRegEnemy.Length;
+
+        if (totEnemies == 0 && canAnimate && currWaveNum+1 != waves.Length)
         {
             animator.SetTrigger("WaveComplete");
             canAnimate = false;
@@ -167,15 +174,23 @@ public class WaveController : MonoBehaviour
             }
             ranPoint = spawnPoints[random];
             //Debug.Log(activeSpawnPoint[random]);
-            if(breakpoint <= 10000)
+            if(currWave.nameOfWave.Equals("Boss"))    //Boss wave
             {
-                Instantiate(ranEnemy, ranPoint.position, Quaternion.identity);
+                Vector3 newPos = new Vector3(playerTransform.position.x, 0, playerTransform.position.z);
+                GameObject newBoss = Instantiate(ranEnemy, newPos, Quaternion.identity);
             }
-            else
+            else   //regular WAVE
             {
-                //Debug.Log("really random");
-                Vector3 newPos = new Vector3(playerTransform.position.x+1, playerTransform.position.y, playerTransform.position.z);
-                Instantiate(ranEnemy, newPos, Quaternion.identity);
+                if (breakpoint <= 10000)
+                {
+                    Instantiate(ranEnemy, ranPoint.position, Quaternion.identity);
+                }
+                else
+                {
+                    //Debug.Log("really random");
+                    Vector3 newPos = new Vector3(playerTransform.position.x + 1, playerTransform.position.y, playerTransform.position.z);
+                    Instantiate(ranEnemy, newPos, Quaternion.identity);
+                }
             }
 
             currWave.numOfEnemies--;

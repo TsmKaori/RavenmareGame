@@ -103,6 +103,10 @@ public class Player : MonoBehaviour
                 isAttack = true;
                 currentHeat = Math.Min(100.0f, currentHeat + 10f);
             }
+            if (Input.GetKeyDown(KeyCode.C) && numHealthPotions > 0) {
+                numHealthPotions--;
+                healDamage(20);
+            }
             if(currentHealth <= 0) {
                 isDead = true;
                 StartCoroutine(gameOver());

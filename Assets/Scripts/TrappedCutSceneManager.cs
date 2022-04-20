@@ -22,6 +22,15 @@ public class TrappedCutSceneManager : MonoBehaviour
         {
             //Go to next picture
             triggerDialogue.TriggerSecondCutSceneDialogue();
+            currentDialogue++;
+        }
+        else if(currentDialogue == 1 && !dialogue.dialogueActive)
+        {
+            //trigger next dialogue and picture
+            currentDialogue++;
+        }else if (currentDialogue == 2 && !dialogue.dialogueActive)
+        {
+            //Go to next scene.
         }
         
     }

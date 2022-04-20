@@ -52,6 +52,7 @@ public class shooting : MonoBehaviour
 
     public void basicBullet() {
         GameObject basicBulletAmmo;
+        
         if (facing.Equals("up"))
         {
             basicBulletAmmo = Instantiate(basicBulletPrefab, upFirePoint.position, upFirePoint.rotation);
@@ -76,6 +77,7 @@ public class shooting : MonoBehaviour
             Rigidbody2D rb = basicBulletAmmo.GetComponent<Rigidbody2D>();
             rb.AddForce(Vector3.left * bulletForce, ForceMode2D.Impulse);
         }
+        
         //yield return new WaitForSeconds(1f);
     }
 

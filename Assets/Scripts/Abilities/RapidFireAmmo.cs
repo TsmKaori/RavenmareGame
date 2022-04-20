@@ -29,6 +29,16 @@ public class RapidFireAmmo : MonoBehaviour
             FirstLevelBoss enemyScript = coll.GetComponent<FirstLevelBoss>();
             enemyScript.takeDamageNoKnockback(10f);
         }
+        else if (coll.tag == "Bat")
+        {
+            BatEnemy enemyScript = gameObject.GetComponent<BatEnemy>();
+            enemyScript.takeDamage(10f);
+        }
+        else if (coll.tag == "SteamBots")
+        {
+            SteambotEnemy enemyScript = gameObject.GetComponent<SteambotEnemy>();
+            enemyScript.takeDamage(10f);
+        }
 
         Destroy(gameObject);
     }

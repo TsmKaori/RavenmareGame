@@ -51,6 +51,9 @@ public class FirstLevelBoss : MonoBehaviour
     public GameObject bats;
     public GameObject basicBulletPrefab;
     public GameObject steamAttackPrefab;
+    public GameObject targetCirclePrefab;
+    public GameObject explosionPrefab;
+    public GameObject hero;
 
     [SerializeField] float _interval = 2f;
     float timeD;
@@ -162,6 +165,14 @@ public class FirstLevelBoss : MonoBehaviour
         basicEnemyAnimator.SetBool("abilityUsed", false);
     }
 
+    IEnumerator explosion(GameObject circle, Vector3 pos, Quaternion rot)
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(circle);
+        GameObject explosion = Instantiate(explosionPrefab, pos, rot);
+    }
+
+
     void makeDecision()
     {
         int random = UnityEngine.Random.Range(0, 100);
@@ -180,7 +191,8 @@ public class FirstLevelBoss : MonoBehaviour
         }
         else if(random > 90 && !isDefense)
         {
-
+            GameObject targetCircle = Instantiate(targetCirclePrefab, hero.transform.position, hero.transform.rotation);
+            StartCoroutine(explosion(targetCircle,hero.transform.position, hero.transform.rotation));
         }
     }
 

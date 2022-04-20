@@ -24,6 +24,11 @@ public class BasicBullet : MonoBehaviour
             Enemy enemyScript = coll.GetComponent<Enemy>();
             enemyScript.takeDamage(30f);
         }
+        else if (coll.tag == "FirstLevelBoss")
+        {
+            FirstLevelBoss enemyScript = coll.GetComponent<FirstLevelBoss>();
+            enemyScript.takeDamageNoKnockback(30f);
+        }
 
         Destroy(gameObject);
     }

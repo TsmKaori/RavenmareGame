@@ -24,6 +24,11 @@ public class RapidFireAmmo : MonoBehaviour
             Enemy enemyScript = coll.GetComponent<Enemy>();
             enemyScript.takeDamage(10f);
         }
+        else if (coll.tag == "FirstLevelBoss")
+        {
+            FirstLevelBoss enemyScript = coll.GetComponent<FirstLevelBoss>();
+            enemyScript.takeDamageNoKnockback(10f);
+        }
 
         Destroy(gameObject);
     }

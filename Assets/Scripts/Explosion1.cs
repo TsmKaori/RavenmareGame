@@ -25,6 +25,11 @@ public class Explosion1 : MonoBehaviour
             Enemy enemyScript = gameObject.GetComponent<Enemy>();
             enemyScript.takeDamage(80f);
         }
+        else if (gameObject.tag == "FirstLevelBoss")
+        {
+            FirstLevelBoss enemyScript = gameObject.GetComponent<FirstLevelBoss>();
+            enemyScript.takeDamageNoKnockback(80f);
+        }
     }
 
     /*

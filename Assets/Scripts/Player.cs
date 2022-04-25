@@ -25,6 +25,10 @@ public class Player : MonoBehaviour
     private Text numHealthPotionsText;
     [SerializeField]
     private GameObject gameOverScreen;
+    [SerializeField]
+    private AudioSource mainMusic;
+    [SerializeField]
+    private AudioSource gameOverMusic;
 
     private int gold = 0;
 
@@ -148,6 +152,8 @@ public class Player : MonoBehaviour
 
     IEnumerator gameOver()
     {
+        mainMusic.Stop();
+        gameOverMusic.Play();
         gameOverScreen.SetActive(true);
         CanvasGroup cg = gameOverScreen.GetComponent<CanvasGroup>();
         for(int i = 0; i <= 100; i++) {

@@ -8,6 +8,9 @@ public class TrappedCutSceneManager : MonoBehaviour
     public DialogueManager dialogue;
     public DialogueTrigger triggerDialogue;
     private int currentDialogue = -1;
+
+    [SerializeField]
+    private Animator fadeAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,7 @@ public class TrappedCutSceneManager : MonoBehaviour
             currentDialogue++;
         }else if (currentDialogue == 2 && !dialogue.dialogueActive)
         {
-            SceneManager.LoadScene(2);
+            StartCoroutine(transitionToNextScene());
         }
         
     }
@@ -41,6 +44,13 @@ public class TrappedCutSceneManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         triggerDialogue.TriggerFirstCutSceneDialogue();
         currentDialogue++;
+    }
+
+    IEnumerator transitionToNextScene()
+    {
+        fadeAnimator.SetTrigger("Ends");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(2);
     }
 
 }

@@ -42,6 +42,9 @@ public class WaveController : MonoBehaviour
 
     [SerializeField] GameObject shopDialog;
 
+    [SerializeField]
+    private Animator fadeAnimator;
+
     public DialogueTrigger dialogueSys;
     public DialogueManager dialogue;
     public bool firstWaveDialogue = true;
@@ -119,7 +122,7 @@ public class WaveController : MonoBehaviour
 
         if(bossWave && !boss) //killed boss on boss wave
         {
-            SceneManager.LoadScene("PostLevelOneCutScene");
+            StartCoroutine(transitionToNextScene());
         }
     }
 
@@ -210,5 +213,12 @@ public class WaveController : MonoBehaviour
                 canAnimate = true;
             }
         }
+    }
+
+    IEnumerator transitionToNextScene()
+    {
+        fadeAnimator.SetTrigger("Ends");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("PostLevelOneCutScene");
     }
 }

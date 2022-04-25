@@ -8,13 +8,19 @@ public class Explosion1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(delay());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collision)  //AOE hit 

@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     private float knockbackCooldown = .1f;
     private float knockbackSpeed = 100f;
     private float maxHealth = 100;
+    private bool isDead = false;
 
     // enemy gameobjects
     [SerializeField]
@@ -66,7 +67,7 @@ public class Enemy : MonoBehaviour
 
         // attack if within attack radius
         isAttacking = distanceToPlayer <= attackRadius;
-        if(isAttacking) {
+        if(isAttacking && !isDead) {
             if(timeSinceAttack >= attackCooldown) {
                 playerScript.takeDamage(attackDamage);
                 timeSinceAttack = 0f;
@@ -124,6 +125,7 @@ public class Enemy : MonoBehaviour
     }
 
     void die() {
+        isDead = true;
         rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         basicEnemyAnimator.SetTrigger("death");

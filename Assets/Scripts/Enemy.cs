@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         System.Random rnd = new System.Random();
-        int gold = rnd.Next(5, 10);
+        int gold = rnd.Next(1, 3);
         playerScript.addGold(gold);
         Destroy(gameObject);
     }

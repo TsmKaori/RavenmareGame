@@ -6328,21 +6328,25 @@ MonoBehaviour:
   firstWaveDialogue:
   - name: 
     sentences:
+    - Welcome to the game of Ravenmare! Click on the gear to proceed on the chat.
     - There will be multiple waves. Your task is to defeat the enemies to proceed
-      to the next wave. At the end of each wave. There will be a break period (30
-      seconds) where you can rest and buy things. To move press w to move up, a to
-      move left, d to move right and s to move down.
+      to the next wave. At the end of each wave. There will be a break period (15
+      seconds) where you can buy items and buffs.
+    - W to move up. A to move left. S to move down. D to move right.
     - Use Q to attack and click on the abilities in the abilties bar to use them.
-      Each of these abilities will have certain cooldowns. The top most ability will
-      release a projectle that will explode on contact. The next ability will freeze
-      all the enemies it makes contact with.
+      You can also use E to shoot a single target bullet. Each of these abilities
+      will have certain cooldowns. The top most ability will release a projectle
+      that will explode on contact. The next ability will freeze all the enemies
+      it makes contact with.
     - Click next to start the next wave.
   secondWaveDialogue:
   - name: 
     sentences:
-    - You will acquire more abilties over time. This new abilties cast a burning
-      field. Whenever an enemy steps over this field. They will take damage over
-      time. Use these abilties carefully as they will be useful over time.
+    - As you noticed, a shop pops up. You can acquired potions. Use C to consume
+      the potion and heal yourself.
+    - You will acquire more abilties over time. This new abilties cast a steam field.
+      Whenever an enemy steps over this field. They will take damage over time. Use
+      these abilties carefully as they will be useful over time.
     - Click next to start the next wave.
   thirdWaveDialogue:
   - name: 
@@ -6364,6 +6368,12 @@ MonoBehaviour:
     sentences:
     - 'You unlocked the final ability for this level. This is rapid fire which will
       release a many projectiles at the enemies. '
+    - Click next to start the next wave.
+  bossDialogue:
+  - name: 
+    sentences:
+    - Welcome to the boss round! This boss might be little tricky. Learn the mechanics
+      and defeat the boss to finish the level.
     - Click next to start the next wave.
 --- !u!114 &522940627
 MonoBehaviour:
@@ -14252,7 +14262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRadius: 5
   attackDamage: 2
-  currentHealth: 2000
+  currentHealth: 3000
   showAttackRadius: 0
   basicEnemyAnimator: {fileID: 1135954067}
   mask: {fileID: 198129671}
@@ -14600,30 +14610,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - nameOfWave: Wave 1
-    numOfEnemies: 3
-    typeOfEnemies:
-    - {fileID: 1740020432}
-    spawnInterval: 1
-  - nameOfWave: Wave 2
-    numOfEnemies: 5
-    typeOfEnemies:
-    - {fileID: 1740020432}
-    spawnInterval: 1
-  - nameOfWave: Wave 3
     numOfEnemies: 10
     typeOfEnemies:
     - {fileID: 1740020432}
     spawnInterval: 0.7
-  - nameOfWave: Wave 4
+  - nameOfWave: Wave 2
     numOfEnemies: 20
     typeOfEnemies:
     - {fileID: 1740020432}
-    spawnInterval: 1
-  - nameOfWave: Wave 5
+    spawnInterval: 0.7
+  - nameOfWave: Wave 3
+    numOfEnemies: 30
+    typeOfEnemies:
+    - {fileID: 1740020432}
+    spawnInterval: 0.7
+  - nameOfWave: Wave 4
     numOfEnemies: 50
     typeOfEnemies:
     - {fileID: 1740020432}
-    spawnInterval: 1
+    spawnInterval: 0.5
+  - nameOfWave: Wave 5
+    numOfEnemies: 80
+    typeOfEnemies:
+    - {fileID: 1740020432}
+    spawnInterval: 0.5
   - nameOfWave: Boss
     numOfEnemies: 1
     typeOfEnemies:
@@ -14655,6 +14665,7 @@ MonoBehaviour:
   dialogueSys: {fileID: 522940626}
   dialogue: {fileID: 72385669}
   firstWaveDialogue: 1
+  bossWave: 0
 --- !u!4 &1871525666
 Transform:
   m_ObjectHideFlags: 0

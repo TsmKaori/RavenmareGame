@@ -93,7 +93,7 @@ public class shooting : MonoBehaviour
 
     IEnumerator CreateRapidFireBullets()
     {
-        for (int i = 0;i < 30 ;i++)
+        for (int i = 0;i < 80 ;i++)
         {
             GameObject rapidFireAmmo;
 
@@ -121,7 +121,7 @@ public class shooting : MonoBehaviour
                 Rigidbody2D rb = rapidFireAmmo.GetComponent<Rigidbody2D>();
                 rb.AddForce(Vector3.left * bulletForce, ForceMode2D.Impulse);
             }
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.05f);
         }
     }
 

@@ -6,13 +6,14 @@ public class DialogueTrigger : MonoBehaviour
 {
     public List<Dialogue> firstTrapSceneDialogue = new List<Dialogue>();
     public List<Dialogue> secondTrapSceneDialogue = new List<Dialogue>();
-
+    public List<Dialogue> thirdTrapSceneDialogue = new List<Dialogue>();
 
     public List<Dialogue> firstWaveDialogue = new List<Dialogue>();
     public List<Dialogue> secondWaveDialogue = new List<Dialogue>();
     public List<Dialogue> thirdWaveDialogue = new List<Dialogue>();
     public List<Dialogue> fourthWaveDialogue = new List<Dialogue>();
     public List<Dialogue> fifthWaveDialogue = new List<Dialogue>();
+    public List<Dialogue> bossDialogue = new List<Dialogue>();
     //public Dialogue dialogue;
 
     public void TriggerFirstCutSceneDialogue()
@@ -22,6 +23,10 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerSecondCutSceneDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(secondTrapSceneDialogue);
+    }
+    public void TriggerThirdCutSceneDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(thirdTrapSceneDialogue);
     }
 
     public void triggerFirstWaveDialogue()
@@ -47,5 +52,10 @@ public class DialogueTrigger : MonoBehaviour
     public void triggerFifthWaveDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(fifthWaveDialogue);
+    }
+
+    public void triggerBossWaveDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(bossDialogue);
     }
 }

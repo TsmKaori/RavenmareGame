@@ -10,7 +10,7 @@ public class FirstLevelBoss : MonoBehaviour
     [SerializeField]
     private int attackDamage = 2;
     [SerializeField]
-    private float currentHealth = 2000;
+    private float currentHealth = 3000;
     [SerializeField]
     private bool showAttackRadius = false;
     [SerializeField]
@@ -29,7 +29,7 @@ public class FirstLevelBoss : MonoBehaviour
     private float timeSinceKnockback = 0f;
     private float knockbackCooldown = .1f;
     private float knockbackSpeed = 100f;
-    private float maxHealth = 2000;
+    private float maxHealth = 3000;
 
     // enemy gameobjects
     [SerializeField]
@@ -75,21 +75,21 @@ public class FirstLevelBoss : MonoBehaviour
             die();
         }
 
-        if (currentHealth < 1500 && !firstDef && !isDefense)
+        if (currentHealth < 2300 && !firstDef && !isDefense)
         { //go to defense mode
             firstDef = true;
             isDefense = true;
             basicEnemyAnimator.SetBool("isDefense", true);
             shield.SetActive(true);
             defenseMode();
-        }else if (currentHealth < 1000 && !secondDef && !isDefense)
+        }else if (currentHealth < 1500 && !secondDef && !isDefense)
         {
             secondDef = true;
             isDefense = true;
             basicEnemyAnimator.SetBool("isDefense", true);
             shield.SetActive(true);
             defenseMode();
-        }else if (currentHealth < 500 && !thirdDef && !isDefense)
+        }else if (currentHealth < 800 && !thirdDef && !isDefense)
         {
             thirdDef = true;
             isDefense = true;
@@ -176,20 +176,20 @@ public class FirstLevelBoss : MonoBehaviour
     void makeDecision()
     {
         int random = UnityEngine.Random.Range(0, 100);
-        if(random < 80 && !isDefense) //shoot
+        if(random < 70 && !isDefense) //shoot
         {
             basicEnemyAnimator.SetBool("isRangeAttack", true);
             isRangeAttack = true;
             GameObject basicbullet = Instantiate(basicBulletPrefab, transform.position, transform.rotation);
             StartCoroutine(range());
         }
-        else if(random > 85 && random < 90 && !isDefense) //Use ability 1
+        else if(random > 70 && random < 80 && !isDefense) //Use ability 1
         {
             GameObject basicbullet = Instantiate(steamAttackPrefab, transform.position, transform.rotation);
             basicEnemyAnimator.SetBool("abilityUsed",true);
             StartCoroutine(steam());
         }
-        else if(random > 90 && !isDefense)
+        else if(random > 80 && !isDefense)
         {
             GameObject targetCircle = Instantiate(targetCirclePrefab, hero.transform.position, hero.transform.rotation);
             StartCoroutine(explosion(targetCircle,hero.transform.position, hero.transform.rotation));

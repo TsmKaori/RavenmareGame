@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Wave
@@ -44,6 +45,9 @@ public class WaveController : MonoBehaviour
     public DialogueTrigger dialogueSys;
     public DialogueManager dialogue;
     public bool firstWaveDialogue = true;
+
+    public bool bossWave = false;
+    private GameObject boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +69,6 @@ public class WaveController : MonoBehaviour
             }
             else
             {
-                //Debug.Log("turn true");
                 activeSpawnPoint[i] = true;
             }
         }
@@ -113,6 +116,11 @@ public class WaveController : MonoBehaviour
                 //spawnNext();
             }
         }
+
+        if(bossWave && !boss) //killed boss on boss wave
+        {
+            SceneManager.LoadScene("PostLevelOneCutScene");
+        }
     }
 
     void spawnNext()
@@ -150,7 +158,7 @@ public class WaveController : MonoBehaviour
         }
         else if (currWaveNum == 5)
         {
-
+            dialogueSys.triggerBossWaveDialogue();
         }
     }
 
@@ -177,7 +185,8 @@ public class WaveController : MonoBehaviour
             if(currWave.nameOfWave.Equals("Boss"))    //Boss wave
             {
                 Vector3 newPos = new Vector3(playerTransform.position.x, 0, playerTransform.position.z);
-                GameObject newBoss = Instantiate(ranEnemy, newPos, Quaternion.identity);
+                boss = Instantiate(ranEnemy, newPos, Quaternion.identity);
+                bossWave = true;
             }
             else   //regular WAVE
             {

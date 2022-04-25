@@ -22,7 +22,7 @@ public class RapidFireAmmo : MonoBehaviour
         if (coll.tag == "Enemy")
         {
             Enemy enemyScript = coll.GetComponent<Enemy>();
-            enemyScript.takeDamage(10f);
+            enemyScript.takeDamageNoKnockback(10f);
         }
         else if (coll.tag == "FirstLevelBoss")
         {

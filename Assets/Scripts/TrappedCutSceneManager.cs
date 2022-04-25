@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrappedCutSceneManager : MonoBehaviour
 {
@@ -26,11 +27,11 @@ public class TrappedCutSceneManager : MonoBehaviour
         }
         else if(currentDialogue == 1 && !dialogue.dialogueActive)
         {
-            //trigger next dialogue and picture
+            triggerDialogue.TriggerThirdCutSceneDialogue();
             currentDialogue++;
         }else if (currentDialogue == 2 && !dialogue.dialogueActive)
         {
-            //Go to next scene.
+            SceneManager.LoadScene(2);
         }
         
     }
@@ -41,4 +42,5 @@ public class TrappedCutSceneManager : MonoBehaviour
         triggerDialogue.TriggerFirstCutSceneDialogue();
         currentDialogue++;
     }
+
 }

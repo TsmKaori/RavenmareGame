@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 7524ed9f6d757be43b6a2cb3a423ffd1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TrappedCutscene.unity
     guid: 09a095b41c0441f44a3174022996bad4
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/PostLevelOneCutscene.unity
+    guid: 146fb76258f2a5e4fac2e4cf34e43fde
   m_configObjects: {}

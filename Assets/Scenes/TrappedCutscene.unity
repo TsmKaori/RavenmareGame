@@ -554,6 +554,10 @@ MonoBehaviour:
   - name: Loki
     sentences:
     - Wait. Who's there?
+  thirdTrapSceneDialogue:
+  - name: Loki
+    sentences:
+    - Hmm lemme get out of here
   firstWaveDialogue:
   - name: 
     sentences:
@@ -594,6 +598,7 @@ MonoBehaviour:
     - 'You unlocked the final ability for this level. This is rapid fire which will
       release a many projectiles at the enemies. '
     - Click next to start the next wave.
+  bossDialogue: []
 --- !u!114 &497552775
 MonoBehaviour:
   m_ObjectHideFlags: 0

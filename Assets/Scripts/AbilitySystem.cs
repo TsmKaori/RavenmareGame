@@ -99,8 +99,9 @@ public class AbilitySystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && basicBulletIsCoolDown != true)
         {
-            shootingScript.basicBullet();
-            StartCoroutine(StartCooldown(1f));
+            //shootingScript.basicBullet();
+            //StartCoroutine(StartCooldown(1f));
+            shootBasicBullet();
         }
 
         if (explodingProjectileIsCooldown)
@@ -180,6 +181,12 @@ public class AbilitySystem : MonoBehaviour
             }
         }
         
+    }
+    
+    void shootBasicBullet()
+    {
+        shootingScript.basicBullet();
+        StartCoroutine(StartCooldown(1f));
     }
 
     public void unlockAbilties(SkillType skillName)

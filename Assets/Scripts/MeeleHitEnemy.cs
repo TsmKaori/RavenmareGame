@@ -27,6 +27,15 @@ public class MeeleHitEnemy : MonoBehaviour
             {
                 FirstLevelBoss enemyScript = gameObject.GetComponent<FirstLevelBoss>();
                 enemyScript.takeDamageNoKnockback(40f);
+            }else if (gameObject.tag == "Bat")
+            {
+                BatEnemy enemyScript = gameObject.GetComponent<BatEnemy>();
+                enemyScript.takeDamage(40f);
+            }
+            else if (gameObject.tag == "SteamBots")
+            {
+                SteambotEnemy enemyScript = gameObject.GetComponent<SteambotEnemy>();
+                enemyScript.takeDamage(40f);
             }
         }
     }

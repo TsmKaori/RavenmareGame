@@ -10,7 +10,7 @@ public class FirstLevelBoss : MonoBehaviour
     [SerializeField]
     private int attackDamage = 2;
     [SerializeField]
-    private float currentHealth = 3000;
+    private float currentHealth = 2000;
     [SerializeField]
     private bool showAttackRadius = false;
     [SerializeField]
@@ -29,7 +29,7 @@ public class FirstLevelBoss : MonoBehaviour
     private float timeSinceKnockback = 0f;
     private float knockbackCooldown = .1f;
     private float knockbackSpeed = 100f;
-    private float maxHealth = 3000;
+    private float maxHealth = 2000;
 
     // enemy gameobjects
     [SerializeField]
@@ -75,21 +75,21 @@ public class FirstLevelBoss : MonoBehaviour
             die();
         }
 
-        if (currentHealth < 2200 && !firstDef && !isDefense)
+        if (currentHealth < 1500 && !firstDef && !isDefense)
         { //go to defense mode
             firstDef = true;
             isDefense = true;
             basicEnemyAnimator.SetBool("isDefense", true);
             shield.SetActive(true);
             defenseMode();
-        }else if (currentHealth < 1500 && !secondDef && !isDefense)
+        }else if (currentHealth < 1000 && !secondDef && !isDefense)
         {
             secondDef = true;
             isDefense = true;
             basicEnemyAnimator.SetBool("isDefense", true);
             shield.SetActive(true);
             defenseMode();
-        }else if (currentHealth < 750 && !thirdDef && !isDefense)
+        }else if (currentHealth < 500 && !thirdDef && !isDefense)
         {
             thirdDef = true;
             isDefense = true;

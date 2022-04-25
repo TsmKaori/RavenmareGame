@@ -234,7 +234,6 @@ GameObject:
   - component: {fileID: 41735442}
   - component: {fileID: 41735443}
   - component: {fileID: 41735444}
-  - component: {fileID: 41735446}
   - component: {fileID: 41735447}
   m_Layer: 6
   m_Name: Player
@@ -313,54 +312,6 @@ MonoBehaviour:
   IsAvailable: 1
   CooldownDuration: 10
   facing: down
---- !u!114 &41735446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41735441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22fb1551ecb34c84499eaa78aaa398b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability1: explodingProjectile
-  ability2: freezing
-  ability3: grappling
-  ability1Cooldown: 0
-  ability2Cooldown: 0
-  ability3Cooldown: 0
-  basicBulletCooldown: 1
-  explodingProjectileCooldown: 30
-  freezeCooldown: 30
-  burningCooldown: 30
-  ringOfFireCooldown: 30
-  grapplingCooldown: 10
-  rapidFireCooldown: 20
-  electricityCooldown: 60
-  explodingProjectilePic: {fileID: 0}
-  freezePic: {fileID: 0}
-  burningPic: {fileID: 0}
-  ringOfFirePic: {fileID: 0}
-  grapplingPic: {fileID: 0}
-  rapidFirePic: {fileID: 0}
-  electricityPic: {fileID: 0}
-  explodingProjectileCenterPic: {fileID: 0}
-  freezeCenterPic: {fileID: 0}
-  freezeCenterPic2: {fileID: 0}
-  burningCenterPic: {fileID: 0}
-  ringOfFireCenterPic: {fileID: 0}
-  grapplingCenterPic: {fileID: 0}
-  rapidFireCenterPic: {fileID: 0}
-  electricityCenterPic: {fileID: 0}
-  freezePrefab: {fileID: 3636008397888851690, guid: 5b84640c1c8d1dc459b19670546c9940, type: 3}
-  ringOfFirePrefab: {fileID: 3529865892107448820, guid: 2e96f443507587845b6313e7587006d0, type: 3}
-  burningPrefab: {fileID: 8807069359981892902, guid: 587bf1396ec8a6542b13d46fa3cdce45, type: 3}
-  shootingScript: {fileID: 0}
-  grapplingScript: {fileID: 41735447}
-  player: {fileID: 174301726}
-  IsAvailable: 1
 --- !u!114 &41735447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1532,7 +1483,7 @@ GameObject:
   - component: {fileID: 270484932}
   - component: {fileID: 270484934}
   - component: {fileID: 270484933}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2024,8 +1975,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -45}
-  m_SizeDelta: {x: -40, y: 20}
+  m_AnchoredPosition: {x: 1.5986938, y: -45}
+  m_SizeDelta: {x: -52.7886, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366558271
 MonoBehaviour:
@@ -2113,8 +2064,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Buy Health Potion
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
+  m_sharedMaterial: {fileID: -927768645422166839, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2138,8 +2089,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6593,7 +6544,7 @@ GameObject:
   - component: {fileID: 532452500}
   - component: {fileID: 532452502}
   - component: {fileID: 532452501}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6831,7 +6782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600032917}
   - component: {fileID: 600032918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6915,7 +6866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609793800}
   - component: {fileID: 609793801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBarMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7285,7 +7236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 694692455}
   - component: {fileID: 694692456}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9148,7 +9099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 929101927}
   - component: {fileID: 929101928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9258,8 +9209,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: -40, y: 20}
+  m_AnchoredPosition: {x: 1.5986938, y: -20}
+  m_SizeDelta: {x: -52.7886, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &933594364
 CanvasRenderer:
@@ -9347,8 +9298,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Increase Attack Damage
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
+  m_sharedMaterial: {fileID: -927768645422166839, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9372,8 +9323,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9456,8 +9407,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: -20, y: 180}
+  m_AnchoredPosition: {x: 0, y: 111.98944}
+  m_SizeDelta: {x: -20, y: 203.9789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987004827
 MonoBehaviour:
@@ -9864,7 +9815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30, y: 30}
+  m_AnchoredPosition: {x: -54, y: 30}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034686123
@@ -10338,7 +10289,7 @@ GameObject:
   - component: {fileID: 1127433176}
   - component: {fileID: 1127433175}
   - component: {fileID: 1127433179}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BatEnemy
   m_TagString: Bat
   m_Icon: {fileID: 0}
@@ -10360,6 +10311,7 @@ Transform:
   - {fileID: 694692455}
   - {fileID: 929101927}
   - {fileID: 270484932}
+  - {fileID: 1750588352}
   m_Father: {fileID: 1266747358}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10474,16 +10426,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cc48ed68a9f6941a19a8cbfab804ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 30
   chaseRadius: 10
-  attackRadius: 1
-  attackDamage: 2
-  currentHealth: 100
-  showAttackRadius: 0
+  attackRadius: 1.2
+  attackDamage: 5
+  currentHealth: 70
+  showAttackRadius: 1
   basicEnemyAnimator: {fileID: 270484933}
   mask: {fileID: 834372132}
-  rigidbody: {fileID: 0}
-  attackRadiusVisual: {fileID: 0}
+  rigidbody: {fileID: 1127433176}
+  attackRadiusVisual: {fileID: 929101926}
   player: {fileID: 174301726}
   playerScript: {fileID: 41735443}
 --- !u!1 &1135954065
@@ -11039,8 +10991,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -40, y: 20}
+  m_AnchoredPosition: {x: 1.5986938, y: 5}
+  m_SizeDelta: {x: -52.7886, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1183898300
 CanvasRenderer:
@@ -11128,8 +11080,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Increase Max Health
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
+  m_sharedMaterial: {fileID: -927768645422166839, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11153,8 +11105,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11965,7 +11917,7 @@ GameObject:
   - component: {fileID: 1486935670}
   - component: {fileID: 1486935669}
   - component: {fileID: 1486935672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SteamBotEnemy
   m_TagString: SteamBots
   m_Icon: {fileID: 0}
@@ -12104,14 +12056,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   chaseRadius: 10
-  attackRadius: 1
-  attackDamage: 2
-  currentHealth: 100
-  showAttackRadius: 0
+  attackRadius: 1.2
+  attackDamage: 12
+  currentHealth: 150
+  showAttackRadius: 1
   basicEnemyAnimator: {fileID: 532452501}
-  mask: {fileID: 0}
-  rigidbody: {fileID: 0}
-  attackRadiusVisual: {fileID: 0}
+  mask: {fileID: 609793799}
+  rigidbody: {fileID: 1486935670}
+  attackRadiusVisual: {fileID: 1821702960}
   player: {fileID: 174301726}
   playerScript: {fileID: 41735443}
 --- !u!1 &1503528713
@@ -12868,8 +12820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: -40, y: 20}
+  m_AnchoredPosition: {x: 1.5986938, y: 30}
+  m_SizeDelta: {x: -52.7886, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632167415
 MonoBehaviour:
@@ -12893,8 +12845,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Welcome to the shop. What would you like to buy?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
+  m_sharedMaterial: {fileID: -927768645422166839, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12918,8 +12870,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13546,9 +13498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87be426a6580547e7836041ea3244e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 25
   chaseRadius: 10
-  attackRadius: 1
+  attackRadius: 1.1
   attackDamage: 10
   currentHealth: 100
   showAttackRadius: 1
@@ -13662,6 +13614,89 @@ Transform:
   m_Father: {fileID: 1422931506}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1750588351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1750588352}
+  - component: {fileID: 1750588353}
+  m_Layer: 7
+  m_Name: HealthBarMask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1750588352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750588351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1127433174}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!331 &1750588353
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750588351}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_MaskAlphaCutoff: 1
+  m_FrontSortingLayerID: -376049785
+  m_BackSortingLayerID: -376049785
+  m_FrontSortingLayer: 1
+  m_BackSortingLayer: 1
+  m_FrontSortingOrder: 3
+  m_BackSortingOrder: 3
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1780693389
 GameObject:
   m_ObjectHideFlags: 0
@@ -14247,7 +14282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821702961}
   - component: {fileID: 1821702962}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14475,7 +14510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRadius: 5
   attackDamage: 2
-  currentHealth: 3000
+  currentHealth: 2000
   showAttackRadius: 0
   basicEnemyAnimator: {fileID: 1135954067}
   mask: {fileID: 198129671}
@@ -15348,7 +15383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.5}
   m_AnchorMax: {x: 0.17, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 65}
+  m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 0, y: 16.1395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060531563
@@ -15373,8 +15408,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shop
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
+  m_sharedMaterial: {fileID: -927768645422166839, guid: 8ae518d40d904d748b2903d27425b514, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15398,8 +15433,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

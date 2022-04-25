@@ -22,12 +22,22 @@ public class BasicBullet : MonoBehaviour
         if (coll.tag == "Enemy")
         {
             Enemy enemyScript = coll.GetComponent<Enemy>();
-            enemyScript.takeDamage(30f);
+            enemyScript.takeDamage(70f);
         }
         else if (coll.tag == "FirstLevelBoss")
         {
             FirstLevelBoss enemyScript = coll.GetComponent<FirstLevelBoss>();
-            enemyScript.takeDamageNoKnockback(30f);
+            enemyScript.takeDamageNoKnockback(70f);
+        }
+        else if (coll.tag == "Bat")
+        {
+            BatEnemy enemyScript = gameObject.GetComponent<BatEnemy>();
+            enemyScript.takeDamage(70f);
+        }
+        else if (coll.tag == "SteamBots")
+        {
+            SteambotEnemy enemyScript = gameObject.GetComponent<SteambotEnemy>();
+            enemyScript.takeDamage(70f);
         }
 
         Destroy(gameObject);

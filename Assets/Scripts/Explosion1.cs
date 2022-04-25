@@ -30,6 +30,16 @@ public class Explosion1 : MonoBehaviour
             FirstLevelBoss enemyScript = gameObject.GetComponent<FirstLevelBoss>();
             enemyScript.takeDamageNoKnockback(80f);
         }
+        else if (gameObject.tag == "Bat")
+        {
+            BatEnemy enemyScript = gameObject.GetComponent<BatEnemy>();
+            enemyScript.takeDamage(80f);
+        }
+        else if (gameObject.tag == "SteamBots")
+        {
+            SteambotEnemy enemyScript = gameObject.GetComponent<SteambotEnemy>();
+            enemyScript.takeDamage(80f);
+        }
     }
 
     /*

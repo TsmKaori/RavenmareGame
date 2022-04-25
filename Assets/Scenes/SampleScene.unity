@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 174301732}
   playerAnimator: {fileID: 174301733}
+  playerSprite: {fileID: 174301728}
   speed: 250
   statusBar: {fileID: 2081013439}
   healthBar: {fileID: 1936322135}

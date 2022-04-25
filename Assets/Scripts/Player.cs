@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Animator playerAnimator;
     [SerializeField]
+    private SpriteRenderer playerSprite;
+    [SerializeField]
     private float speed;
     [SerializeField]
     private Image statusBar;
@@ -47,6 +49,9 @@ public class Player : MonoBehaviour
     private int maxHealth = 100;
     private bool isDead = false;
     private int numHealthPotions = 0;
+    private bool isTakingDamage = false;
+    private float takingDamageTime = 0.25f;
+    private float takingDamageCounter = 0.25f;
 
     // player heat
     private float currentHeat = 0;
@@ -99,6 +104,14 @@ public class Player : MonoBehaviour
                     //playerRigidbody.constraints = RigidbodyConstraints2D.None;
                     playerAnimator.SetBool("isAttacking", false);
                     isAttack = false;
+                }
+            }
+
+            if(isTakingDamage) {
+                takingDamageCounter -= Time.deltaTime;
+                if(takingDamageCounter <= 0) {
+                    isTakingDamage = false;
+                    playerSprite.color = new Color(1, 1, 1, 1);
                 }
             }
 
@@ -189,6 +202,9 @@ public class Player : MonoBehaviour
 
     public void takeDamage(int amount) {
         currentHealth = Math.Max(0, currentHealth - amount);
+        isTakingDamage = true;
+        takingDamageCounter = takingDamageTime;
+        playerSprite.color = new Color(1, 0, 0, 1);
         updateHealthBar();
     }
 

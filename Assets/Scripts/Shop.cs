@@ -14,6 +14,8 @@ public class Shop : MonoBehaviour
     private GameObject increaseAttackDamageUI;
     [SerializeField]
     private GameObject buyHealthPotionUI;
+    [SerializeField]
+    private AudioSource buySound;
 
     private int increaseMaxHealthCost = 40;
     private int increaseAttackDamageCost = 25;
@@ -26,18 +28,21 @@ public class Shop : MonoBehaviour
     }
 
     public void increaseMaxHealth() {
+        buySound.Play();
         if(playerScript.takeGold(increaseMaxHealthCost)) {
             playerScript.increaseMaxHealth(10);
         }
     }
 
     public void increaseAttackDamage() {
+        buySound.Play();
         if(playerScript.takeGold(increaseAttackDamageCost)) {
             playerScript.increaseAttackDamage(1);
         }
     }
 
     public void buyHealthPotion() {
+        buySound.Play();
         if(playerScript.takeGold(healthPotionCost)) {
             playerScript.addHealthPotion();
         }

@@ -6,6 +6,8 @@ public class ExplosionEnemy : MonoBehaviour
 {
     public GameObject target;
     public Player player;
+    [SerializeField]
+    private AudioSource explosionSound;
     // Start is called before the first frame update
     void Start()
     {

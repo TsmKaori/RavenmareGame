@@ -25,10 +25,13 @@ public class Player : MonoBehaviour
     private Text numHealthPotionsText;
     [SerializeField]
     private GameObject gameOverScreen;
+
     [SerializeField]
     private AudioSource mainMusic;
     [SerializeField]
     private AudioSource gameOverMusic;
+    [SerializeField]
+    private AudioSource attackSound;
 
     private int gold = 0;
 
@@ -105,6 +108,7 @@ public class Player : MonoBehaviour
                 //playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
                 playerAnimator.SetBool("isAttacking", true);
                 isAttack = true;
+                attackSound.Play();
                 currentHeat = Math.Min(100.0f, currentHeat + 10f);
             }
             if (Input.GetKeyDown(KeyCode.C) && numHealthPotions > 0) {

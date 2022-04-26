@@ -33,12 +33,12 @@ public class Fire : MonoBehaviour
         else if (gameObject.tag == "Bat")
         {
             BatEnemy enemyScript = gameObject.GetComponent<BatEnemy>();
-            enemyScript.takeDamage(15f);
+            enemyScript.takeDamageNoKnockback(15f);
         }
         else if (gameObject.tag == "SteamBots")
         {
             SteambotEnemy enemyScript = gameObject.GetComponent<SteambotEnemy>();
-            enemyScript.takeDamage(15f);
+            enemyScript.takeDamageNoKnockback(15f);
         }
     }
 }

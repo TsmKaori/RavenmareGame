@@ -32,12 +32,12 @@ public class RapidFireAmmo : MonoBehaviour
         else if (coll.tag == "Bat")
         {
             BatEnemy enemyScript = gameObject.GetComponent<BatEnemy>();
-            enemyScript.takeDamage(10f);
+            enemyScript.takeDamageNoKnockback(10f);
         }
         else if (coll.tag == "SteamBots")
         {
             SteambotEnemy enemyScript = gameObject.GetComponent<SteambotEnemy>();
-            enemyScript.takeDamage(10f);
+            enemyScript.takeDamageNoKnockback(10f);
         }
 
         Destroy(gameObject);

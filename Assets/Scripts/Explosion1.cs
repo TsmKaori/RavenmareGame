@@ -39,12 +39,12 @@ public class Explosion1 : MonoBehaviour
         else if (gameObject.tag == "Bat")
         {
             BatEnemy enemyScript = gameObject.GetComponent<BatEnemy>();
-            enemyScript.takeDamage(80f);
+            enemyScript.takeDamageNoKnockback(80f);
         }
         else if (gameObject.tag == "SteamBots")
         {
             SteambotEnemy enemyScript = gameObject.GetComponent<SteambotEnemy>();
-            enemyScript.takeDamage(80f);
+            enemyScript.takeDamageNoKnockback(80f);
         }
     }
 

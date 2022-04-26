@@ -545,20 +545,49 @@ MonoBehaviour:
   firstTrapSceneDialogue:
   - name: Loki
     sentences:
-    - Augghhh. Im stuck here.
-    - I need to figure out a way here quickly.
-  - name: Loki
-    sentences:
-    - Wait I hear something.
-    - Maybe someone is coming.
+    - "This place\u2026so ominous. I smell evil in the air but could never get my
+      fingers on the roots. Thus, I allowed myself to get captured earlier. This
+      plan will be costly, but it was the only way\u2026"
+    - "Who are these guys? They move in such sly ways to which not even I can catch.
+      The evils they have committed\u2026why now? Ravenmare was an amazing city.
+      A city of wonders. A city that defines expectations and innovated the mind
+      in a multitude of ways. Until recently, this new evil has taken over the town
+      but remains unknown to even the keenest beings. "
+    - 'I must know more. Being near the root is exactly what I must do and find out. '
+    - "Wait\u2026Looks like someone is coming."
   secondTrapSceneDialogue:
+  - name: Toji
+    sentences:
+    - "Based on your reputation, I find myself really\u2026disappointed. To think
+      a renowned detective will fall so easily. I never thought I was able to see
+      you but here we are, Loki."
   - name: Loki
     sentences:
-    - Wait. Who's there?
+    - "So I\u2019m assuming you\u2019re the boss of this operation."
+  - name: Toji
+    sentences:
+    - " You are correct. My name is Toji. I came afar. Don\u2019t expect me to spare
+      you. My kind do not treat intruders kindly. Ever since we begin to take over
+      this city, our operations have skyrocketed, and soon, this place will be the
+      home for my kind. We will have resources to feed on, and we will thrive. "
+  - name: Loki
+    sentences:
+    - Your kind?
+  - name: Toji
+    sentences:
+    - "Oh\u2026as expected. This city, while is stellar of all sorts, has been blinded.
+      You guys continue to advance in every way possible. But because of these advancements,
+      you guys ignore the rest of the world including the changes and rises of the
+      different beings. Isolation resulted in centuries of ignorance and our rise
+      in power. Nevertheless, I must leave. Say hello to death for me."
   thirdTrapSceneDialogue:
   - name: Loki
     sentences:
-    - Hmm lemme get out of here
+    - "His kind? Wait\u2026those eyes and fangs. No way\u2026a vampire? I thought
+      those are myths. I must find out more."
+    - "Let\u2019s see\u2026.Ha. I got it. These creatures seem like advanced beings
+      but still cannot lock up a human being like me. Here\u2019s to my escape. I
+      must find out more about these creatures\u2026"
   firstWaveDialogue:
   - name: 
     sentences:

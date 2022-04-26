@@ -28,6 +28,11 @@ public class BatEnemy : MonoBehaviour
     private float timeSinceAttack = 0f;
     private float attackCooldown = 1f;
     private float maxHealth = 100;
+    private bool isKnockedBacked = false;
+    private float timeSinceKnockback = 0f;
+    private float knockbackCooldown = .1f;
+    private float knockbackSpeed = 100f;
+    private bool isDead = false;
 
     // enemy gameobjects
     [SerializeField]
@@ -64,8 +69,9 @@ public class BatEnemy : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
         // attack if within attack radius
+        // attack if within attack radius
         isAttacking = distanceToPlayer <= attackRadius;
-        if (isAttacking)
+        if (isAttacking && !isDead)
         {
             if (timeSinceAttack >= attackCooldown)
             {
@@ -97,15 +103,34 @@ public class BatEnemy : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Not moving");
             //basicEnemyAnimator.SetBool("isMoving", false);
+        }
+        if (isKnockedBacked)
+        {
+            if (timeSinceKnockback >= knockbackCooldown)
+            {
+                isKnockedBacked = false;
+            }
+            else
+            {
+                timeSinceKnockback += Time.fixedDeltaTime;
+                rigidbody.velocity = (transform.position - player.transform.position) * knockbackSpeed * Time.fixedDeltaTime;
+            }
         }
     }
 
     public void takeDamage(float damage)
     {
         currentHealth = Math.Max(0f, currentHealth - damage);
+        isKnockedBacked = true;
+        timeSinceKnockback = 0f;
     }
+
+    public void takeDamageNoKnockback(float damage)
+    {
+        currentHealth = Math.Max(0f, currentHealth - damage);
+    }
+
 
     public void freezeAbility()
     {
@@ -115,7 +140,9 @@ public class BatEnemy : MonoBehaviour
 
     void die()
     {
+        isDead = true;
         rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         basicEnemyAnimator.SetTrigger("death");
         StartCoroutine(death());
     }

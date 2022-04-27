@@ -11,6 +11,8 @@ public class TrappedCutSceneManager : MonoBehaviour
 
     [SerializeField]
     private Animator fadeAnimator;
+    [SerializeField]
+    private GameObject fade;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,7 @@ public class TrappedCutSceneManager : MonoBehaviour
 
     IEnumerator transitionToNextScene()
     {
+        fade.SetActive(true);
         fadeAnimator.SetTrigger("Ends");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);

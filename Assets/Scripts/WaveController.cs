@@ -44,6 +44,8 @@ public class WaveController : MonoBehaviour
 
     [SerializeField]
     private Animator fadeAnimator;
+    [SerializeField]
+    private GameObject fade;
 
     public DialogueTrigger dialogueSys;
     public DialogueManager dialogue;
@@ -217,6 +219,7 @@ public class WaveController : MonoBehaviour
 
     IEnumerator transitionToNextScene()
     {
+        fade.SetActive(true);
         fadeAnimator.SetTrigger("Ends");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("PostLevelOneCutScene");

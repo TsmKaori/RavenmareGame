@@ -10578,7 +10578,7 @@ MonoBehaviour:
   attackRadius: 1
   attackDamage: 5
   currentHealth: 70
-  showAttackRadius: 1
+  showAttackRadius: 0
   basicEnemyAnimator: {fileID: 270484933}
   mask: {fileID: 1750588351}
   rigidbody: {fileID: 1127433176}
@@ -12206,7 +12206,7 @@ MonoBehaviour:
   attackRadius: 1
   attackDamage: 12
   currentHealth: 150
-  showAttackRadius: 1
+  showAttackRadius: 0
   basicEnemyAnimator: {fileID: 532452501}
   mask: {fileID: 609793799}
   rigidbody: {fileID: 1486935670}
@@ -13650,7 +13650,7 @@ MonoBehaviour:
   attackRadius: 1
   attackDamage: 10
   currentHealth: 100
-  showAttackRadius: 1
+  showAttackRadius: 0
   basicEnemyAnimator: {fileID: 2094723358}
   mask: {fileID: 1952091607}
   rigidbody: {fileID: 1740020437}

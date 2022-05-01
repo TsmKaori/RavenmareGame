@@ -20,6 +20,7 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile holeTile;
     [SerializeField] private Tile wallDownTile;
     [SerializeField] private Tile wallUpTile;
+    [SerializeField] private Tile wallUpTile2;
 
     [SerializeField] private float detailRate = 0.4f;
     [SerializeField] private float doubleDetailRate = 0.2f;
@@ -29,13 +30,13 @@ public class TileManager : MonoBehaviour
     private int minX = 0;
     private int previousY = 0;
 
-    private TileBase[] groundTileColumn = new TileBase[10];
+    private TileBase[] groundTileColumn = new TileBase[12];
     private TileBase[] collisionTileColumn = new TileBase[2];
 
     void Awake()
     {
-        collisionTileColumn[0] = wallDownTile;
-        groundTileColumn[0] = groundTile;
+        collisionTileColumn[0] = wallUpTile;
+        groundTileColumn[0] = wallUpTile2;
         groundTileColumn[1] = groundTile;
         groundTileColumn[2] = groundTile;
         groundTileColumn[3] = groundTile;
@@ -45,7 +46,9 @@ public class TileManager : MonoBehaviour
         groundTileColumn[7] = groundTile;
         groundTileColumn[8] = groundTile;
         groundTileColumn[9] = groundTile;
-        collisionTileColumn[1] = wallUpTile;
+        groundTileColumn[10] = groundTile;
+        groundTileColumn[11] = groundTile;
+        collisionTileColumn[1] = wallDownTile;
     }
 
     void FixedUpdate()
@@ -74,12 +77,12 @@ public class TileManager : MonoBehaviour
                 if (standingX < previousX) right = -1;
 
                 // determine the coordinates of each tile in the new column
-                Vector3Int[] revealedGroundTiles = new Vector3Int[10];
+                Vector3Int[] revealedGroundTiles = new Vector3Int[13];
                 Vector3Int[] revealedCollisionTiles = new Vector3Int[2];
 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 12; i++)
                 {
-                    revealedGroundTiles[9 - i] = new Vector3Int(standingX + (8 * right), i - 5);
+                    revealedGroundTiles[11 - i] = new Vector3Int(standingX + (8 * right), i - 5);
                 }
 
                 revealedCollisionTiles[0] = new Vector3Int(standingX + (8 * right), 5);
@@ -124,7 +127,6 @@ public class TileManager : MonoBehaviour
                         int Y2 = Random.Range(-5, 5);
                         if (Y2 != Y)
                         {
-                            Debug.Log("Double details!!");
                             Tile detail = detailsArray[Random.Range(0, detailsArray.Length)];
                             SpawnDetail(Y2, standingX, right, detailTilemap, detail);
                         }

@@ -5351,7 +5351,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10756,9 +10756,16 @@ MonoBehaviour:
   detailTilemap: {fileID: 521338541}
   collisionTilemap: {fileID: 876303228}
   groundTile: {fileID: 11400000, guid: c8b46a0be619ec54da740b37b30e861d, type: 2}
-  detailTile: {fileID: 11400000, guid: 6db2552e16064214489167fecddb2db9, type: 2}
+  rockTile: {fileID: 11400000, guid: 83d1a96746fece04ea93c46e7e1b2e8c, type: 2}
+  bloodTile: {fileID: 11400000, guid: 98c2eaacfa3a6ea40b77b51d4f4c09f2, type: 2}
+  bloodTileSm: {fileID: 11400000, guid: 3e76dbf9f5b87154cbb6ea577ed9cd95, type: 2}
+  pentaTile: {fileID: 11400000, guid: 8af5b89cfbde7fc429056daec5f9bbd1, type: 2}
+  candlesTile: {fileID: 11400000, guid: 7ff1ee13a9464854d8f9a534c83babbb, type: 2}
+  holeTile: {fileID: 11400000, guid: 7263ab1f68b33ff46ac7ac7b20e0adf6, type: 2}
   wallDownTile: {fileID: 11400000, guid: 54faf567fe8de7c4ab676922ec573d7c, type: 2}
   wallUpTile: {fileID: 11400000, guid: 4d7de3090738dd340a99e2728bdc6150, type: 2}
+  detailRate: 1
+  doubleDetailRate: 0.2
 --- !u!1 &1172767778
 GameObject:
   m_ObjectHideFlags: 0

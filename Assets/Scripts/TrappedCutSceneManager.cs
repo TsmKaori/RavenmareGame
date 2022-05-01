@@ -2,12 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TrappedCutSceneManager : MonoBehaviour
 {
     public DialogueManager dialogue;
     public DialogueTrigger triggerDialogue;
     private int currentDialogue = -1;
+
+    public GameObject firstImage;
+    public GameObject secondImage;
+    public GameObject thirdImage;
+    public GameObject fourthImage;
+    public GameObject fifthImage;
+
+    public bool currDelay = false;
 
     [SerializeField]
     private Animator fadeAnimator;
@@ -24,17 +33,25 @@ public class TrappedCutSceneManager : MonoBehaviour
     void Update()
     {
         //update image here and check on dialogue
-        if(currentDialogue == 0 && !dialogue.dialogueActive)
+        if(currentDialogue == 0 && !dialogue.dialogueActive && !currDelay)
         {
             //Go to next picture
-            triggerDialogue.TriggerSecondCutSceneDialogue();
-            currentDialogue++;
+            secondImage.SetActive(false);
+            thirdImage.SetActive(true);
+            StartCoroutine(delaySecondDialogue());
         }
-        else if(currentDialogue == 1 && !dialogue.dialogueActive)
+        else if(currentDialogue == 1 && !dialogue.dialogueActive && !currDelay)
         {
-            triggerDialogue.TriggerThirdCutSceneDialogue();
-            currentDialogue++;
-        }else if (currentDialogue == 2 && !dialogue.dialogueActive)
+            StartCoroutine(delaythirdDialogue());
+            //triggerDialogue.TriggerThirdCutSceneDialogue();
+            //currentDialogue++;
+        }else if (currentDialogue == 2 && !dialogue.dialogueActive && !currDelay)
+        {
+            StartCoroutine(delayfourthDialogue());
+            //triggerDialogue.TriggerFourthCutSceneDialogue();
+            //currentDialogue++;
+        }
+        else if (currentDialogue == 3 && !dialogue.dialogueActive && !currDelay)
         {
             StartCoroutine(transitionToNextScene());
         }
@@ -43,8 +60,39 @@ public class TrappedCutSceneManager : MonoBehaviour
 
     IEnumerator firstDialogueDelay()
     {
+        currDelay = true;
         yield return new WaitForSeconds(3f);
+        currDelay = false;
+        firstImage.SetActive(false);
+        secondImage.SetActive(true);
         triggerDialogue.TriggerFirstCutSceneDialogue();
+        currentDialogue++;
+    }
+
+    IEnumerator delaySecondDialogue()
+    {
+        currDelay = true;
+        yield return new WaitForSeconds(1f);
+        currDelay = false;
+        triggerDialogue.TriggerSecondCutSceneDialogue();
+        currentDialogue++;
+    }
+
+    IEnumerator delaythirdDialogue()
+    {
+        currDelay = true;
+        yield return new WaitForSeconds(1f);
+        currDelay = false;
+        triggerDialogue.TriggerThirdCutSceneDialogue();
+        currentDialogue++;
+    }
+
+    IEnumerator delayfourthDialogue()
+    {
+        currDelay = true;
+        yield return new WaitForSeconds(1f);
+        currDelay = false;
+        triggerDialogue.TriggerFourthCutSceneDialogue();
         currentDialogue++;
     }
 

@@ -7,6 +7,7 @@ public class DialogueTrigger : MonoBehaviour
     public List<Dialogue> firstTrapSceneDialogue = new List<Dialogue>();
     public List<Dialogue> secondTrapSceneDialogue = new List<Dialogue>();
     public List<Dialogue> thirdTrapSceneDialogue = new List<Dialogue>();
+    public List<Dialogue> fourthTrapSceneDialogue = new List<Dialogue>();
 
     public List<Dialogue> firstWaveDialogue = new List<Dialogue>();
     public List<Dialogue> secondWaveDialogue = new List<Dialogue>();
@@ -27,6 +28,11 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerThirdCutSceneDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(thirdTrapSceneDialogue);
+    }
+
+    public void TriggerFourthCutSceneDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(fourthTrapSceneDialogue);
     }
 
     public void triggerFirstWaveDialogue()

@@ -42,6 +42,8 @@ public class TrappedCutSceneManager : MonoBehaviour
         }
         else if(currentDialogue == 1 && !dialogue.dialogueActive && !currDelay)
         {
+            thirdImage.SetActive(false);
+            fourthImage.SetActive(true);
             StartCoroutine(delaythirdDialogue());
             //triggerDialogue.TriggerThirdCutSceneDialogue();
             //currentDialogue++;
@@ -72,7 +74,7 @@ public class TrappedCutSceneManager : MonoBehaviour
     IEnumerator delaySecondDialogue()
     {
         currDelay = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         currDelay = false;
         triggerDialogue.TriggerSecondCutSceneDialogue();
         currentDialogue++;
@@ -81,7 +83,7 @@ public class TrappedCutSceneManager : MonoBehaviour
     IEnumerator delaythirdDialogue()
     {
         currDelay = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         currDelay = false;
         triggerDialogue.TriggerThirdCutSceneDialogue();
         currentDialogue++;
@@ -90,7 +92,7 @@ public class TrappedCutSceneManager : MonoBehaviour
     IEnumerator delayfourthDialogue()
     {
         currDelay = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         currDelay = false;
         triggerDialogue.TriggerFourthCutSceneDialogue();
         currentDialogue++;

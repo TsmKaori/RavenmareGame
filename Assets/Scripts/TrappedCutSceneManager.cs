@@ -49,6 +49,8 @@ public class TrappedCutSceneManager : MonoBehaviour
             //currentDialogue++;
         }else if (currentDialogue == 2 && !dialogue.dialogueActive && !currDelay)
         {
+            fourthImage.SetActive(false);
+            fifthImage.SetActive(true);
             StartCoroutine(delayfourthDialogue());
             //triggerDialogue.TriggerFourthCutSceneDialogue();
             //currentDialogue++;

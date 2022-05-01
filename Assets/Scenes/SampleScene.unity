@@ -6472,11 +6472,10 @@ MonoBehaviour:
       to the next wave. At the end of each wave. There will be a break period (15
       seconds) where you can buy items and buffs.
     - W to move up. A to move left. S to move down. D to move right.
-    - Use Q to attack and click on the abilities in the abilties bar to use them.
-      You can also use E to shoot a single target bullet. Each of these abilities
-      will have certain cooldowns. The top most ability will release a projectle
-      that will explode on contact. The next ability will freeze all the enemies
-      it makes contact with.
+    - Use Q to attack and E to shoot a single target bullet. You can also use abilities
+      by clicking them in the ability bar. Each ability has a cooldown period.
+    - The top most ability will release a projectle that will explode on contact.
+      The next ability will freeze the enemies it makes contact with.
     - Click next to start the next wave.
   secondWaveDialogue:
   - name: 

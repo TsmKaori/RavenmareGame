@@ -17,9 +17,9 @@ public class Shop : MonoBehaviour
     [SerializeField]
     private AudioSource buySound;
 
-    private int increaseMaxHealthCost = 100;
-    private int increaseAttackDamageCost = 60;
-    private int healthPotionCost = 10;
+    private int increaseMaxHealthCost = 50;
+    private int increaseAttackDamageCost = 30;
+    private int healthPotionCost = 5;
 
     void Start() {
         increaseMaxHealthUI.GetComponent<TextMeshProUGUI>().text += " (" + increaseMaxHealthCost + " gold)";

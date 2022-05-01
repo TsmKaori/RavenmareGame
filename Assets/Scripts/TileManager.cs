@@ -12,11 +12,21 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tilemap collisionTilemap;
 
     [SerializeField] private Tile groundTile;
-    [SerializeField] private Tile detailTile;
+    [SerializeField] private Tile rockTile;
+    [SerializeField] private Tile bloodTile;
+    [SerializeField] private Tile bloodTileSm;
+    [SerializeField] private Tile pentaTile;
+    [SerializeField] private Tile candlesTile;
+    [SerializeField] private Tile holeTile;
     [SerializeField] private Tile wallDownTile;
     [SerializeField] private Tile wallUpTile;
 
+    [SerializeField] private float detailRate = 0.4f;
+    [SerializeField] private float doubleDetailRate = 0.2f;
+
     private int previousX = 0;
+    private int maxX = 0;
+    private int minX = 0;
     private int previousY = 0;
 
     private TileBase[] groundTileColumn = new TileBase[10];
@@ -45,33 +55,92 @@ public class TileManager : MonoBehaviour
 
         if (standingX != previousX) // if we're in a new column
         {
-            int right = 1;
-            if (standingX < previousX) right = -1;
 
-            // determine the coordinates of each tile in the new column
-            Vector3Int[] revealedGroundTiles = new Vector3Int[10];
-            Vector3Int[] revealedCollisionTiles = new Vector3Int[2];
-
-            for (int i = 0; i < 10; i++)
+            // check if we're revealing a new column
+            if (standingX > maxX || standingX < minX)
             {
-                revealedGroundTiles[9 - i] = new Vector3Int(standingX + (8 * right), i - 5);
+                //  update the max/min x
+                if (standingX > maxX)
+                {
+                    maxX = standingX;
+                }
+                else if (standingX < minX)
+                {
+                    minX = standingX;
+                }
+
+                // check if we're going right
+                int right = 1;
+                if (standingX < previousX) right = -1;
+
+                // determine the coordinates of each tile in the new column
+                Vector3Int[] revealedGroundTiles = new Vector3Int[10];
+                Vector3Int[] revealedCollisionTiles = new Vector3Int[2];
+
+                for (int i = 0; i < 10; i++)
+                {
+                    revealedGroundTiles[9 - i] = new Vector3Int(standingX + (8 * right), i - 5);
+                }
+
+                revealedCollisionTiles[0] = new Vector3Int(standingX + (8 * right), 5);
+                revealedCollisionTiles[1] = new Vector3Int(standingX + (8 * right), -6);
+
+                groundTilemap.SetTiles(revealedGroundTiles, groundTileColumn);
+                collisionTilemap.SetTiles(revealedCollisionTiles, collisionTileColumn);
+
+
+
+                // spawn random details
+                float seed = Random.Range(0f, 1f);
+
+                if (Mathf.Abs(seed - Random.Range(0f, 1f)) < detailRate)
+                {
+                    Tile[] detailsArray = new Tile[4];
+                    detailsArray[0] = bloodTile;
+                    detailsArray[1] = bloodTileSm;
+                    detailsArray[2] = candlesTile;
+                    detailsArray[3] = pentaTile;
+
+                    Tile[] detailsArrayC = new Tile[2];
+                    detailsArrayC[0] = rockTile;
+                    detailsArrayC[1] = holeTile;
+
+                    int Y = Random.Range(-5, 5);
+
+                    if (seed > .75f)
+                    {
+                        Tile detail = detailsArrayC[Random.Range(0, detailsArrayC.Length)];
+                        SpawnDetail(Y, standingX, right, collisionTilemap, detail);
+                    }
+                    else
+                    {
+                        Tile detail = detailsArray[Random.Range(0, detailsArray.Length)];
+                        SpawnDetail(Y, standingX, right, detailTilemap, detail);
+                    }
+
+                    // this is a really dumb way to do this 
+                    if (Mathf.Abs(seed - Random.Range(0f, 1f)) < doubleDetailRate)
+                    {
+                        int Y2 = Random.Range(-5, 5);
+                        if (Y2 != Y)
+                        {
+                            Debug.Log("Double details!!");
+                            Tile detail = detailsArray[Random.Range(0, detailsArray.Length)];
+                            SpawnDetail(Y2, standingX, right, detailTilemap, detail);
+                        }
+                    }
+
+                }
             }
 
-            revealedCollisionTiles[0] = new Vector3Int(standingX + (8 * right), 5);
-            revealedCollisionTiles[1] = new Vector3Int(standingX + (8 * right), -6);
-
-            groundTilemap.SetTiles(revealedGroundTiles, groundTileColumn);
-            collisionTilemap.SetTiles(revealedCollisionTiles, collisionTileColumn);
-
-            if (Random.Range(0f, 4f) > 3)
-            {
-                detailTilemap.SetTile(new Vector3Int(standingX + (8 * right), Random.Range(-5, 5)), detailTile);
-            }
         }
-
-
 
         previousX = standingX;
         previousY = standingY;
+    }
+
+    void SpawnDetail(int Y, int standingX, int right, Tilemap tilemap, Tile tile)
+    {
+        tilemap.SetTile(new Vector3Int(standingX + (8 * right), Y), tile);
     }
 }

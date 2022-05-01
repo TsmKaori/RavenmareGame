@@ -10578,7 +10578,7 @@ MonoBehaviour:
   chaseRadius: 10
   attackRadius: 1.2
   attackDamage: 5
-  currentHealth: 70
+  currentHealth: 50
   showAttackRadius: 0
   basicEnemyAnimator: {fileID: 270484933}
   mask: {fileID: 1750588351}
@@ -12206,7 +12206,7 @@ MonoBehaviour:
   chaseRadius: 10
   attackRadius: 1.2
   attackDamage: 16
-  currentHealth: 140
+  currentHealth: 120
   showAttackRadius: 0
   basicEnemyAnimator: {fileID: 532452501}
   mask: {fileID: 609793799}
@@ -13650,7 +13650,7 @@ MonoBehaviour:
   chaseRadius: 10
   attackRadius: 1.2
   attackDamage: 10
-  currentHealth: 100
+  currentHealth: 80
   showAttackRadius: 0
   basicEnemyAnimator: {fileID: 2094723358}
   mask: {fileID: 1952091607}

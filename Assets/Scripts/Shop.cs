@@ -28,22 +28,22 @@ public class Shop : MonoBehaviour
     }
 
     public void increaseMaxHealth() {
-        buySound.Play();
         if(playerScript.takeGold(increaseMaxHealthCost)) {
+            buySound.Play();
             playerScript.increaseMaxHealth(10);
         }
     }
 
     public void increaseAttackDamage() {
-        buySound.Play();
         if(playerScript.takeGold(increaseAttackDamageCost)) {
+            buySound.Play();
             playerScript.increaseAttackDamage(1);
         }
     }
 
     public void buyHealthPotion() {
-        buySound.Play();
         if(playerScript.takeGold(healthPotionCost)) {
+            buySound.Play();
             playerScript.addHealthPotion();
         }
     }

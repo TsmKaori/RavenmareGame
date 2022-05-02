@@ -22,6 +22,27 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile wallUpTile;
     [SerializeField] private Tile wallUpTile2;
 
+    [SerializeField] private Tile bigBrick;
+    [SerializeField] private Tile bigBrick2;
+    [SerializeField] private Tile bloods;
+    [SerializeField] private Tile bloods2;
+    [SerializeField] private Tile boneses;
+    [SerializeField] private Tile boneses2;
+    [SerializeField] private Tile cracks;
+    [SerializeField] private Tile cracks2;
+    [SerializeField] private Tile rock2;
+    [SerializeField] private Tile rocksm3;
+    [SerializeField] private Tile rocksm4;
+    [SerializeField] private Tile rocksm5;
+    [SerializeField] private Tile skull;
+    [SerializeField] private Tile skull2;
+
+    Tile[] detailsArray = new Tile[13];
+    Tile[] detailsArrayC = new Tile[7];
+
+
+
+
     [SerializeField] private float detailRate = 0.4f;
     [SerializeField] private float doubleDetailRate = 0.2f;
 
@@ -35,6 +56,29 @@ public class TileManager : MonoBehaviour
 
     void Awake()
     {
+        detailsArray[0] = bloodTile;
+        detailsArray[1] = bloodTileSm;
+        detailsArray[2] = candlesTile;
+        detailsArray[3] = pentaTile;
+        detailsArray[4] = bloods;
+        detailsArray[5] = bloods2;
+        detailsArray[6] = boneses;
+        detailsArray[7] = boneses2;
+        detailsArray[8] = cracks;
+        detailsArray[9] = cracks2;
+        detailsArray[10] = rocksm3;
+        detailsArray[11] = rocksm4;
+        detailsArray[12] = rocksm5;
+
+
+        detailsArrayC[0] = rockTile;
+        detailsArrayC[1] = holeTile;
+        detailsArrayC[2] = bigBrick;
+        detailsArrayC[3] = bigBrick2;
+        detailsArrayC[4] = rock2;
+        detailsArrayC[5] = skull;
+        detailsArrayC[6] = skull2;
+
         collisionTileColumn[0] = wallUpTile;
         groundTileColumn[0] = wallUpTile2;
         groundTileColumn[1] = groundTile;
@@ -98,15 +142,7 @@ public class TileManager : MonoBehaviour
 
                 if (Mathf.Abs(seed - Random.Range(0f, 1f)) < detailRate)
                 {
-                    Tile[] detailsArray = new Tile[4];
-                    detailsArray[0] = bloodTile;
-                    detailsArray[1] = bloodTileSm;
-                    detailsArray[2] = candlesTile;
-                    detailsArray[3] = pentaTile;
 
-                    Tile[] detailsArrayC = new Tile[2];
-                    detailsArrayC[0] = rockTile;
-                    detailsArrayC[1] = holeTile;
 
                     int Y = Random.Range(-5, 5);
 

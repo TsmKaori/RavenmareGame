@@ -137,7 +137,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isAttack)
+        if (!isAttack && !isDead)
         {
             playerRigidbody.velocity = inputVector * speed * Time.fixedDeltaTime;
 

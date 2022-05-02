@@ -35,6 +35,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private AudioSource attackSound;
 
+    [SerializeField]
+    private AudioSource potionSound;
+
     private int gold = 0;
 
     public int attackDamage = 40;
@@ -52,6 +55,10 @@ public class Player : MonoBehaviour
     private bool isTakingDamage = false;
     private float takingDamageTime = 0.25f;
     private float takingDamageCounter = 0.25f;
+
+    private bool isHealing = false;
+    private float healingTime = 0.25f;
+    private float healingCounter = 0.25f;
 
     // player heat
     private float currentHeat = 0;
@@ -111,6 +118,14 @@ public class Player : MonoBehaviour
                 takingDamageCounter -= Time.deltaTime;
                 if(takingDamageCounter <= 0) {
                     isTakingDamage = false;
+                    playerSprite.color = new Color(1, 1, 1, 1);
+                }
+            }
+
+            if(isHealing) {
+                healingCounter -= Time.deltaTime;
+                if(healingCounter <= 0) {
+                    isHealing = false;
                     playerSprite.color = new Color(1, 1, 1, 1);
                 }
             }
@@ -196,7 +211,11 @@ public class Player : MonoBehaviour
     }
 
     public void healDamage(int amount) {
+        potionSound.Play();
         currentHealth = Math.Min(maxHealth, currentHealth + amount);
+        isHealing = true;
+        healingCounter = healingTime;
+        playerSprite.color = new Color(0, 1, 0, 1);
         updateHealthBar();
     }
 

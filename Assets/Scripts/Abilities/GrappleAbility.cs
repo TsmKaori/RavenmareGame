@@ -13,7 +13,8 @@ public class GrappleAbility : MonoBehaviour
     [SerializeField] LayerMask gappleMask;
     [SerializeField] float MaxDist = 5f;
     [SerializeField] float speed = 10f;
-    [SerializeField] float shootSpeed = 20f;
+    [SerializeField] float shoTime = 20f;
+
 
     [SerializeField]
     private Animator playerAnimator;
@@ -26,7 +27,7 @@ public class GrappleAbility : MonoBehaviour
     //Vector2 direction;
 
 
-    Vector2 target;
+    Vector2 hit;
 
     // Start is called before the first frame update
     void Start()
@@ -45,12 +46,12 @@ public class GrappleAbility : MonoBehaviour
 
         if (retracting)
         {
-            Vector2 grapplePosition = Vector2.Lerp(playerTransform.position, target, speed * Time.deltaTime);
+            Vector2 grapplePosition = Vector2.Lerp(playerTransform.position, hit, speed * Time.deltaTime);
             playerTransform.position = grapplePosition;
 
             hook.SetPosition(0, playerTransform.position);
 
-            if(Vector2.Distance(playerTransform.position, target) < 0.5f)
+            if(Vector2.Distance(playerTransform.position, hit) < 0.5f)
             {
                 retracting = false;
                 currentlyGappling = false;
@@ -81,22 +82,17 @@ public class GrappleAbility : MonoBehaviour
         }
         //direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
-
-       bool hit = Physics2D.Raycast(playerTransform.position, direction, 5f, gappleMask);
-
        RaycastHit2D tii = Physics2D.Raycast(playerTransform.position, direction, 5f, ~gappleMask);
 
         
         if (tii.collider)
         {
-            currentlyGappling = true;
-            //target = (Vector2)playerTransform.position - direction;
-            target = tii.point;
-            //Debug.Log(target);
             hook.enabled = true;
             hook.positionCount = 2;
+            currentlyGappling = true;
+            this.hit = tii.point;
 
-            StartCoroutine(Grappling());
+            StartCoroutine(currFly());
             return true;
         }
         else
@@ -106,25 +102,25 @@ public class GrappleAbility : MonoBehaviour
         
     }
 
-    IEnumerator Grappling()
+    IEnumerator currFly()
     {
         float x = 0;
-        float time = 10;
+        float count = 10;
 
         hook.SetPosition(0, playerTransform.position);
         hook.SetPosition(1, playerTransform.position);
 
-        Vector2 newPosition;
+        Vector2 targetMove;
 
-        for (; x < time; x += shootSpeed * Time.deltaTime)
+        for (; x < count; x += shoTime * Time.deltaTime)
         {
-            newPosition = Vector2.Lerp(playerTransform.position, target, x / time);
+            targetMove = Vector2.Lerp(playerTransform.position, hit, x / count);
             hook.SetPosition(0, playerTransform.position);
-            hook.SetPosition(1, newPosition);
+            hook.SetPosition(1, targetMove);
             yield return null;
         }
 
-        hook.SetPosition(1, target);
+        hook.SetPosition(1, hit);
         retracting = true;
     }
 }

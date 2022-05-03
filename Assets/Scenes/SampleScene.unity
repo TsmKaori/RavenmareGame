@@ -11416,7 +11416,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 72385669}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: DisplayNextSentence
+        m_MethodName: nextLine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

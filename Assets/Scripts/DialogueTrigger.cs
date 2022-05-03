@@ -19,49 +19,49 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerFirstCutSceneDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(firstTrapSceneDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(firstTrapSceneDialogue);
     }
     public void TriggerSecondCutSceneDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(secondTrapSceneDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(secondTrapSceneDialogue);
     }
     public void TriggerThirdCutSceneDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(thirdTrapSceneDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(thirdTrapSceneDialogue);
     }
 
     public void TriggerFourthCutSceneDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(fourthTrapSceneDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(fourthTrapSceneDialogue);
     }
 
     public void triggerFirstWaveDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(firstWaveDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(firstWaveDialogue);
     }
 
     public void triggerSecondWaveDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(secondWaveDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(secondWaveDialogue);
     }
 
     public void triggerThirdWaveDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(thirdWaveDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(thirdWaveDialogue);
     }
 
     public void triggerFourthWaveDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(fourthWaveDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(fourthWaveDialogue);
     }
 
     public void triggerFifthWaveDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(fifthWaveDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(fifthWaveDialogue);
     }
 
     public void triggerBossWaveDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(bossDialogue);
+        FindObjectOfType<DialogueManager>().iniateDial(bossDialogue);
     }
 }

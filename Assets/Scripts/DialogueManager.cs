@@ -23,11 +23,11 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueActive = false; 
 
-    private Queue<string> sentences;
+    private Queue<string> words;
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        words = new Queue<string>();
         dialogList = new List<Dialogue>();
     }
 
@@ -37,21 +37,21 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    public void StartDialogue (List<Dialogue> dialogue)
+    public void iniateDial (List<Dialogue> dial)
     {
         dialogueActive = true;
         dialogueObject.SetActive(true);
 
-        dialogueCount = dialogue.Count;
+        dialogueCount = dial.Count;
         i = 0;
         currentpic = null;
-        dialogList = dialogue;
+        dialogList = dial;
 
-        nameText.text = dialogue[i].name;
-        sentences.Clear();
+        nameText.text = dial[i].name;
+        words.Clear();
 
 
-        if ((dialogue[i].name).Equals("Loki"))    //Check which character is speaking and activate
+        if ((dial[i].name).Equals("Loki"))    //Check which character is speaking and activate
         {
             if (currentpic != null)
             {
@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
             LokiPicture.gameObject.SetActive(true);
             currentpic = LokiPicture;
         }
-        else if ((dialogue[i].name).Equals("Toji"))
+        else if ((dial[i].name).Equals("Toji"))
         {
             if (currentpic != null)
             {
@@ -77,19 +77,19 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        foreach (string sentence in dialogue[i].sentences)
+        foreach (string sentence in dial[i].sentences)
         {
-            sentences.Enqueue(sentence);
+            words.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        nextLine();
     }
 
-    public void DisplayNextSentence()
+    public void nextLine()
     {
-        if (i < dialogueCount && sentences.Count == 0) //To next thing on the dialogue list or next person
+        if (i < dialogueCount && words.Count == 0) //To next thing on the dialogue list or next person
         {
-            EndDialogue();
+            endDial();
             i++;
             if(i >= dialogueCount)
             {
@@ -101,9 +101,9 @@ public class DialogueManager : MonoBehaviour
                 dialogueActive = false;
                 return;
             }
-            foreach (string sentenc in dialogList[i].sentences)
+            foreach (string sent in dialogList[i].sentences)
             {
-                sentences.Enqueue(sentenc);
+                words.Enqueue(sent);
             }
 
             nameText.text = dialogList[i].name;
@@ -143,21 +143,21 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        Debug.Log(sentences.Count);
+        Debug.Log(words.Count);
 
 
-        string sentence = sentences.Dequeue();
+        string line = words.Dequeue();
         //dialogueText = GetComponent<TMP_Text>();
-        dialogueText.text = sentence;
+        dialogueText.text = line;
     }
 
-    public void EndDialogue()
+    public void endDial()
     {
         //LokiPicture.enabled = false;
         //Set Dialogue box inactive here
     }
 
-    public void CloseDialogue(GameObject dialogue) {
+    public void closeDialogue(GameObject dialogue) {
         dialogue.SetActive(false);
     }
 }
